@@ -1,2 +1,58 @@
+include layout/utils
+
+-
+    var topMenu = [
+        'ЦДБ Родина',
+        'Схема этажей',
+        'Аренда',
+        'Контакты',
+    ]
+    var mainMenu = [
+        'Развлечения',
+        'Рестораны',
+        'Магазины',
+        'Услуги',
+        'Новости и акции',
+    ]
+
+
+
+
 header.header
-    .container
+    .header__mobile-wrapper.opened
+        .header__mobile
+            .header__logo-wrapper
+                +anchor('/'): +img(require('assets/icons/logo.svg')).header__logo
+            button.header__mobile-button Меню
+        .header__mobile-menu
+            .header__search-button Что будем искать
+            ul.header-main__menu
+                each item in mainMenu
+                    li.header-main_menu-item: +anchor= item
+
+            ul.header-top__menu
+                each item in topMenu
+                    li.header-top__menu-item: +anchor= item
+            .header-contacts
+                .header-contacts__title Контакты:
+                .header-info__item.location Казань, ул. Баумана, д. 44/8
+                .header-info__item.work-time Ежедневно 8:00-22:00
+                +anchor.header-info__item.tel +7 843 567 16 71
+                +anchor.header-info__item.tel +7 937 778 67 83 (Аренда)
+                +anchor.header-info__item.mail rodina-kzn@yandex.ru
+    .header__desktop-wrapper
+        .header-top
+            ul.header-top__menu
+                each item in topMenu
+                    li.header-top__menu-item: +anchor= item
+            .header-info
+                +anchor.header-info__item.navigation= 'Как добраться'
+                .header-info__item.location= 'Казань, ул. Баумана, д. 44/8'
+                .header-info__item.work-time= 'Ежедневно 8:00-22:00'
+        .header-main
+            .header__logo-wrapper
+                +anchor('/'): +img(require('assets/icons/logo.svg')).header__logo
+            ul.header-main__menu
+                each item in mainMenu
+                    li.header-main_menu-item: +anchor= item
+            .header__search-button Что будем искать

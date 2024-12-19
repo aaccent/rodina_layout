@@ -6,10 +6,22 @@ html {
     font-size: 62.5%;
 }
 
+section {
+    padding: 0 160px;
+
+    @media only screen and (max-width: utils.$mobile600) {
+        padding: 0 15px;
+    }
+}
+
 .container {
     margin: 0 auto;
-    padding: 0 15px;
-    max-width: 1230px;
+    padding: 0;
+    max-width: 1600px;
+
+    @media only screen and (max-width: utils.$mobile600) {
+        max-width: 345px;
+    }
 }
 
 .main-wrapper {
@@ -30,6 +42,9 @@ html {
 
 body {
     overflow-x: clip;
+    font-family: var(--nunito);
+    font-size: 18px;
+    font-weight: 400;
 }
 
 html.disable-scroll {
@@ -51,9 +66,9 @@ html.disable-scroll {
         margin-top: 15px;
     }
 
-    @media only screen and (max-width: utils.$tablet1200) {
+    @media only screen and (max-width: utils.$mobile600) {
         p + p {
-            margin-top: 12px;
+            margin-top: 19px;
         }
     }
 }

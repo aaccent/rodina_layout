@@ -1,4 +1,6 @@
 include layout/utils
+include layout/menu/menu
+include layout/contacts-block/contacts-block
 
 -
     var topMenu = [
@@ -16,14 +18,10 @@ include layout/utils
     ]
 
 
-
-
 header.header
     .container.header__desktop
         .header-top
-            ul.header-top__menu
-                each item in topMenu
-                    li.header-top__menu-item: +anchor= item
+            +menu({items: topMenu})
             .header-info
                 +anchor.header-info__item.navigation= 'Как добраться'
                 .header-info__item.location= 'Казань, ул. Баумана, д. 44/8'
@@ -31,9 +29,7 @@ header.header
         .header-main
             .header__logo-wrapper
                 +anchor('/'): +img(require('assets/icons/logo.svg')).header__logo
-            ul.header-main__menu
-                each item in mainMenu
-                    li.header-main_menu-item: +anchor= item
+            +menu({items:mainMenu, bold: true})
             .header__search-button Что будем искать
     .header__mobile
         .header__logo-wrapper
@@ -42,16 +38,6 @@ header.header
         .header__mobile-wrapper
             .header__mobile-menu
                 .header__search-button Что будем искать
-                ul.header-main__menu
-                    each item in mainMenu
-                        li.header-main_menu-item: +anchor= item
-                ul.header-top__menu
-                    each item in topMenu
-                        li.header-top__menu-item: +anchor= item
-                .header-contacts
-                    .header-contacts__title Контакты:
-                    .header-info__item.location= 'Казань, ул. Баумана, д. 44/8'
-                    .header-info__item.work-time= 'Ежедневно 8:00-22:00'
-                    +anchor('tel:+7 843 567 16 71').header-info__item.tel= '+7 843 567 16 71'
-                    +anchor('tel:+7 937 778 67 83').header-info__item.tel= '+7 937 778 67 83 (Аренда)'
-                    +anchor('mailto:rodina-kzn@yandex.ru').header-info__item.mail= 'rodina-kzn@yandex.ru'
+                +menu({items: mainMenu, column:true})
+                +menu({items: topMenu, column: true})
+                +contactBlock

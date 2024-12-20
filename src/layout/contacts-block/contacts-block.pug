@@ -1,0 +1,10 @@
+include layout/utils
+
+mixin contactBlock
+    .contact-block
+        .contact-block__title Контакты:
+        .contact-block__item.location= 'Казань, ул. Баумана, д. 44/8'
+        .contact-block__item.work-time= 'Ежедневно 8:00-22:00'
+        +anchor('tel:+7 843 567 16 71').contact-block__item.tel= '+7 843 567 16 71'
+        +anchor('tel:+7 937 778 67 83').contact-block__item.tel= '+7 937 778 67 83 (Аренда)'
+        +anchor('mailto:rodina-kzn@yandex.ru').contact-block__item.mail= 'rodina-kzn@yandex.ru'

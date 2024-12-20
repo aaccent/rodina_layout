@@ -19,21 +19,15 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        color: var(--black);
-        font-size: 1.6rem;
         border-bottom: 1px solid var(--border);
-
-        &__menu {
-            gap: 30px;
-            display: flex;
-            align-items: center;
-        }
     }
 
     &-info {
         gap: 30px;
         display: flex;
         align-items: center;
+        color: var(--black);
+        font-size: 1.6rem;
 
         &__item {
             gap: 7px;
@@ -55,14 +49,6 @@
             &.work-time::before {
                 background-image: url('assets/icons/clock.svg');
             }
-
-            &.tel::before {
-                background-image: url('assets/icons/phone.svg');
-            }
-
-            &.mail::before {
-                background-image: url('assets/icons/mail.svg');
-            }
         }
     }
 
@@ -71,14 +57,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-        &__menu {
-            gap: 30px;
-            display: flex;
-            align-items: center;
-            font-size: 1.8rem;
-            font-weight: 800;
-        }
     }
 
     &__search-button {
@@ -111,6 +89,9 @@
 
 @media only screen and (max-width: utils.$tablet1000) {
     .header {
+        nav {
+            margin-top: 30px;
+        }
         &__desktop {
             display: none;
         }
@@ -130,26 +111,6 @@
                 opacity: 0;
                 visibility: hidden;
                 background-color: white;
-
-                .header-main__menu,
-                .header-top__menu {
-                    gap: 15px;
-                    margin-top: 30px;
-                    flex-direction: column;
-                    align-items: start;
-                    font-weight: 400;
-                }
-
-                .header-contacts {
-                    gap: 20px;
-                    margin-top: 30px;
-                    display: flex;
-                    flex-direction: column;
-
-                    &__title {
-                        opacity: 0.35;
-                    }
-                }
             }
 
             &.menu-opened {

@@ -5,6 +5,7 @@ void (function () {
     if (!header) return
 
     if (isMobile) {
+        const html = document.querySelector('html')
         const mobileHeader = document.querySelector('.header__mobile')
         const menuButton = mobileHeader.querySelector('.header__menu-button')
 
@@ -14,14 +15,10 @@ void (function () {
         headerMobileWrapper.style.top = `${top}px`
 
         menuButton.addEventListener('click', () => {
+            mobileHeader.classList.toggle('menu-opened')
+            html.classList.toggle('disabled-scroll')
             const menuOpened = mobileHeader.classList.contains('menu-opened')
-            if (menuOpened) {
-                mobileHeader.classList.remove('menu-opened')
-                menuButton.textContent = 'Меню'
-            } else {
-                mobileHeader.classList.add('menu-opened')
-                menuButton.textContent = 'Закрыть меню'
-            }
+            menuButton.textContent = menuOpened ? 'Закрыть меню' : 'Меню'
         })
     }
 })()

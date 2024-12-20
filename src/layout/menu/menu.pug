@@ -1,0 +1,22 @@
+include layout/utils
+
+mixin menu(props)
+    -
+        props = Object.assign({
+            items: [''],
+            column: false,
+            bold: false,
+        }, props || {})
+    nav.menu
+        if props.column
+            ul.menu__column
+                each item in props.items
+                    li.menu__item: +anchor= item
+        else if props.bold
+            ul.menu__main
+                each item in props.items
+                    li.menu__item: +anchor= item
+        else
+            ul
+                each item in props.items
+                    li.menu__item: +anchor= item

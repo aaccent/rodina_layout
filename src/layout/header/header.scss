@@ -2,13 +2,16 @@
 
 .header {
     position: sticky;
+    z-index: 100;
+    top: 0;
     background-color: white;
 
-    &__desktop-wrapper {
-        margin: 0 auto;
+    &__desktop {
         padding: 25px 0;
-        width: 100%;
-        max-width: 1600px;
+    }
+
+    &__mobile {
+        display: none;
     }
 
     &-top {
@@ -51,6 +54,14 @@
 
             &.work-time::before {
                 background-image: url('assets/icons/clock.svg');
+            }
+
+            &.tel::before {
+                background-image: url('assets/icons/phone.svg');
+            }
+
+            &.mail::before {
+                background-image: url('assets/icons/mail.svg');
             }
         }
     }
@@ -96,57 +107,59 @@
             max-width: 150px;
         }
     }
-
-    &__mobile-wrapper {
-        display: none;
-    }
 }
 
 @media only screen and (max-width: utils.$tablet1000) {
     .header {
-        &__desktop-wrapper {
+        &__desktop {
             display: none;
         }
 
-        &__search-button {
-            flex-direction: row-reverse;
-            justify-content: start;
-        }
-
-        &-main__menu,
-        &-top__menu {
-            gap: 15px;
-            margin-top: 30px;
-            flex-direction: column;
-            align-items: start;
-            font-size: 1.8rem;
-            font-weight: 400;
-        }
-
-        &-contacts {
-            gap: 20px;
-            margin-top: 30px;
+        &__mobile {
+            padding: 15px 0;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
 
-            &__title {
-                color: #8f9fbd;
-            }
-        }
+            &-wrapper {
+                position: fixed;
+                padding: 30px 15px;
+                width: 100%;
+                overflow-y: auto;
+                opacity: 0;
+                visibility: hidden;
+                background-color: white;
 
-        &__mobile-wrapper {
-            margin: 0 auto;
-            padding: 15px 0 0;
-            width: 100%;
-            display: block;
-
-            &.opened {
-                .header__mobile-menu {
-                    opacity: 1;
+                .header-main__menu,
+                .header-top__menu {
+                    gap: 15px;
+                    margin-top: 30px;
+                    flex-direction: column;
+                    align-items: start;
+                    font-weight: 400;
                 }
 
-                .header__mobile-button::before {
+                .header-contacts {
+                    gap: 20px;
+                    margin-top: 30px;
+                    display: flex;
+                    flex-direction: column;
+
+                    &__title {
+                        opacity: 0.35;
+                    }
+                }
+            }
+
+            &.menu-opened {
+                .header__menu-button::before {
                     background-image: url('assets/icons/close.svg');
+                }
+
+                & .header__mobile-wrapper {
+                    opacity: 1;
+                    visibility: visible;
                 }
             }
         }
@@ -154,47 +167,22 @@
         &__logo-wrapper {
             margin-left: 15px;
             max-width: 104px;
-
-            img {
-                filter: brightness(0) saturate(100%) invert(19%) sepia(83%) saturate(5798%) hue-rotate(346deg)
-                    brightness(89%) contrast(99%);
-            }
         }
 
-        &__mobile {
-            padding-bottom: 16px;
+        &__menu-button {
+            gap: 5px;
+            margin-right: 15px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--border);
+            color: var(--red);
+            font-size: 1.6rem;
+            font-weight: 800;
 
-            &-button {
-                gap: 5px;
-                margin-right: 15px;
-                display: flex;
-                align-items: center;
-                color: var(--red);
-                font-size: 1.6rem;
-                font-weight: 800;
-
-                &::before {
-                    @include utils.square(20px);
-                    @include utils.bg-defaults(cover);
-                    content: '';
-                    background-image: url('assets/icons/burger.svg');
-                }
-            }
-
-            &-menu {
-                position: absolute;
-                padding: 30px 15px;
-                width: 100%;
-                opacity: 0;
-                background-color: white;
-            }
-
-            &-wrapper {
-                display: block;
+            &::before {
+                @include utils.bg-defaults(cover);
+                @include utils.square(20px);
+                content: '';
+                background-image: url('assets/icons/burger.svg');
             }
         }
     }

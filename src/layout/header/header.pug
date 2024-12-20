@@ -7,14 +7,14 @@ include layout/contacts-block/contacts-block
         'ЦДБ Родина',
         'Схема этажей',
         'Аренда',
-        'Контакты',
+        'Контакты'
     ]
     var mainMenu = [
         'Развлечения',
         'Рестораны',
         'Магазины',
         'Услуги',
-        'Новости и акции',
+        'Новости и акции'
     ]
 
 
@@ -27,13 +27,13 @@ header.header
                 .header-info__item.location= 'Казань, ул. Баумана, д. 44/8'
                 .header-info__item.work-time= 'Ежедневно 8:00-22:00'
         .header-main
-            .header__logo-wrapper
-                +anchor('/'): +img(require('assets/icons/logo.svg')).header__logo
+            .logo-wrapper
+                +anchor('/'): +img(require('assets/icons/logo.svg'))
             +menu({items:mainMenu, bold: true})
             .header__search-button Что будем искать
     .header__mobile
-        .header__logo-wrapper
-            +anchor('/'): +img(require('assets/icons/logo.svg')).header__logo
+        .logo-wrapper
+            +anchor('/'): +img(require('assets/icons/logo.svg'))
         .header__menu-button Меню
         .header__mobile-wrapper
             .header__mobile-menu

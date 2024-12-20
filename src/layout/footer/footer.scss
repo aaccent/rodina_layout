@@ -1,0 +1,102 @@
+@use 'styles/utils';
+
+.footer {
+    font-family: var(--inter), sans-serif;
+    font-size: 1.8rem;
+    background-color: hsl(220, 64%, 95%);
+
+    .container {
+        --padding-bottom: 120px;
+        position: relative;
+        padding: 50px 0 var(--padding-bottom);
+        display: flex;
+    }
+
+    &__info {
+        display: flex;
+    }
+
+    &__menu {
+        gap: 141px;
+        margin-left: 302px;
+        display: flex;
+        text-wrap: nowrap;
+    }
+
+    .logo-wrapper {
+        width: 208px;
+    }
+
+    .contact-block {
+        margin-left: auto;
+    }
+
+    &__privacy {
+        position: absolute;
+        bottom: var(--padding-bottom);
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        color: hsl(219, 26%, 65%);
+
+        a {
+            margin-bottom: 20px;
+            text-decoration: underline;
+        }
+
+        &-aaccent {
+            gap: 6px;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            color: hsl(0, 0%, 9%);
+
+            &::before {
+                @include utils.bg-defaults(cover);
+                @include utils.square(24px);
+                content: '';
+                background-image: url('assets/icons/aaccent.svg');
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .footer {
+        font-family: var(--nunito), sans-serif;
+
+        .container {
+            padding: 30px 0;
+            max-width: 277px;
+            flex-direction: column;
+        }
+
+        &__info {
+            flex-direction: column;
+        }
+
+        &__menu {
+            gap: 15px;
+            margin-top: 27px;
+            margin-left: 0;
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .contact-block {
+            margin-top: 30px;
+            margin-left: 0;
+            font-family: var(--inter), sans-serif;
+        }
+
+        &__privacy {
+            position: static;
+            margin-top: 30px;
+            font-size: 1.6rem;
+
+            a:first-child {
+                margin-bottom: 7px;
+            }
+        }
+    }
+}

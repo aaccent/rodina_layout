@@ -1,2 +1,32 @@
+include layout/utils
+include layout/menu/menu
+include layout/contacts-block/contacts-block
+
+-
+    var topMenu = [
+        'ЦДБ Родина',
+        'Схема этажей',
+        'Аренда',
+        'Контакты',
+    ]
+    var mainMenu = [
+        'Развлечения',
+        'Рестораны',
+        'Магазины',
+        'Услуги',
+        'Новости и акции',
+    ]
+
 footer.footer
     .container
+        .footer__info
+            .logo-wrapper
+                +anchor('/'): +img(require('assets/icons/logo.svg'))
+            .footer__menu
+                +menu({items: mainMenu, column: true})
+                +menu({items: topMenu, column: true})
+        +contactBlock
+        .footer__privacy
+            +anchor Политика персональных данных
+            span Создание и продвижение сайтов:
+            +wrapBreak: +anchor('https://www.aaccent.ru/').footer__privacy-aaccent Акцент на результат

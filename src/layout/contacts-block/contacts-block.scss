@@ -2,9 +2,10 @@
 
 .contact-block {
     gap: 20px;
-    margin-top: 30px;
     display: flex;
     flex-direction: column;
+    font-family: var(--inter), sans-serif;
+    font-size: 1.8rem;
 
     &__title {
         opacity: 0.35;

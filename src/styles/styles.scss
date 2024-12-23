@@ -15,3 +15,8 @@
 @use 'layout/footer/footer';
 @use 'layout/menu/menu';
 @use 'layout/contacts-block/contacts-block';
+
+//Components
+@use 'ui/form/rent/rent';
+@use 'ui/form/contact/contact';
+@use 'ui/input/input';

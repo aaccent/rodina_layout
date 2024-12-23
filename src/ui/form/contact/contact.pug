@@ -1,0 +1,23 @@
+include layout/utils
+include ui/input/input
+
+section.form
+    form.contact-form(novalidate, data-handler='/action.php')
+        .contact-form__decor
+            .contact-form__title Оставьте заявку!
+            .contact-form__text По любым вопроса вы может связаться с нами, заполните форму.
+            .contact-form__decor-red
+            .contact-form__decor-gray
+            +img(require('assets/static/decor.svg')).contact-form__decor-image
+        .contact-form__content
+            +field({ type: 'text', required: true, placeholder: 'Ваше имя', name: 'name' })
+            +field({ type: 'tel', required: true, placeholder: 'Телефон', name: 'tel' })
+            +field({ type: 'email', required: true, placeholder: 'Электронная почта', name: 'email' })
+            +field({ type: 'text', placeholder: 'Тема обращения', name: 'theme' })
+            +field({ type: 'text', placeholder: 'Ваше сообщения', name: 'message' })
+            +field({type: 'file', name: 'file'})
+                p Переместите сюда файл
+            .contact-form__privacy
+                p Нажимая на кнопку «Отправить» вы соглашаетесь на
+                    +anchor обработку персональных данных
+                button.contact-form__button(type='submit') Отправить

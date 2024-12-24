@@ -45,7 +45,6 @@ body {
     font-family: var(--nunito);
     font-size: 18px;
     font-weight: 400;
-    background-color: #9ca3af;
 }
 
 html.disable-scroll {
@@ -77,5 +76,18 @@ html.disable-scroll {
         p + p {
             margin-top: 19px;
         }
+    }
+}
+
+.map {
+    width: 100%;
+
+    &-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    [class*='ymaps-2'][class*='-ground-pane'] {
+        filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
     }
 }

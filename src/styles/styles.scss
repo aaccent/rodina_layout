@@ -15,3 +15,7 @@
 @use 'layout/footer/footer';
 @use 'layout/menu/menu';
 @use 'layout/contacts-block/contacts-block';
+
+// Pages
+@use 'pages/index/index';
+@use 'pages/contacts/contacts';

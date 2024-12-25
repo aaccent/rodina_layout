@@ -9,9 +9,12 @@
 
 // Ui
 @use 'ui/buttons/close-btn';
+@use 'ui/card/card';
 
 // Layout
 @use 'layout/header/header';
 @use 'layout/footer/footer';
 @use 'layout/menu/menu';
 @use 'layout/contacts-block/contacts-block';
+
+@use 'components/card-list/card-list';

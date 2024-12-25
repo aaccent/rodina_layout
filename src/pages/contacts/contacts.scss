@@ -1,0 +1,147 @@
+@use 'styles/utils';
+
+.contacts {
+    padding-bottom: 170px;
+    .container:has(.map) {
+        height: 641px;
+    }
+
+    &-container {
+        position: absolute;
+        z-index: 10;
+        top: 143px;
+        left: 160px;
+        padding: 50px;
+        overflow: hidden;
+        box-shadow: 0 0 20px 0 rgba(37, 67, 127, 0.25);
+        background-color: white;
+        border-radius: 30px;
+
+        .breadcrumb {
+            margin-bottom: 5px;
+            color: var(--gray);
+            font-size: 1.4rem;
+        }
+
+        &__decor {
+            position: absolute;
+            z-index: -1;
+
+            &._red {
+                @include utils.circle(220px);
+                right: -50px;
+                bottom: -50px;
+                background-color: var(--red);
+            }
+
+            &._blue {
+                @include utils.circle(101px);
+                bottom: -20px;
+                left: -20px;
+                background-color: hsl(221, 64%, 83%);
+            }
+
+            &._gray {
+                @include utils.circle(51px);
+                bottom: 119px;
+                left: 316px;
+                background-color: #5480da26;
+            }
+        }
+    }
+
+    &__content {
+        margin-bottom: 30px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &-title {
+            margin-bottom: 5px;
+            color: var(--gray);
+            font-size: 1.4rem;
+        }
+
+        &-text {
+            display: flex;
+            align-items: center;
+            font-size: 2.4rem;
+            font-weight: 800;
+        }
+    }
+
+    &__button {
+        gap: 6px;
+        margin-left: 25px;
+        display: flex;
+        align-items: center;
+        color: var(--red);
+        font-size: 1.4rem;
+        text-decoration: underline;
+
+        &::before {
+            @include utils.bg-defaults(contain);
+            content: '';
+            width: 10px;
+            height: 20px;
+            text-decoration: none;
+            background-image: url('assets/icons/mark.svg');
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .contacts {
+        &-container {
+            top: 250px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 20px 20px 67px;
+            width: 345px;
+            box-shadow: none;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+
+            &__decor {
+                &._red {
+                    @include utils.circle(220px);
+                    right: -90px;
+                    bottom: -90px;
+                }
+
+                &._blue {
+                    @include utils.circle(101px);
+                    bottom: -45px;
+                    left: -45px;
+                }
+
+                &._gray {
+                    @include utils.circle(87px);
+                    top: -30px;
+                    right: -30px;
+                    left: auto;
+                }
+            }
+        }
+
+        .page-header {
+            margin-bottom: 20px;
+        }
+
+        &__content {
+            margin-bottom: 20px;
+
+            &-text {
+                flex-direction: column;
+                align-items: start;
+                font-size: 1.8rem;
+            }
+        }
+
+        &__button {
+            margin-top: 10px;
+            margin-left: 0;
+        }
+    }
+}

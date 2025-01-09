@@ -15,11 +15,12 @@ section {
 }
 
 .container {
-    margin: 0 auto;
+    margin: 100px auto;
     padding: 0;
     max-width: 1600px;
 
     @media only screen and (max-width: utils.$mobile600) {
+        margin: 50px auto;
         max-width: 345px;
     }
 }

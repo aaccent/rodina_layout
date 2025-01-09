@@ -1,3 +1,5 @@
+@use 'styles/utils';
+
 .business-card {
     position: relative;
     padding: 30px;
@@ -35,10 +37,18 @@
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: utils.$mobile600) {
     .business-card {
         padding: 20px;
         height: 250px;
         border-radius: 15px;
+
+        &__title {
+            font-size: 1.8rem;
+        }
+
+        &__text {
+            font-size: 1.6rem;
+        }
     }
 }

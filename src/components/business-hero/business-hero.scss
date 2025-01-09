@@ -1,3 +1,5 @@
+@use 'styles/utils';
+
 .business-hero {
     margin-top: 80px;
 
@@ -73,8 +75,35 @@
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: utils.$mobile600) {
     .business-hero {
+        position: relative;
+        margin-top: 30px;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -4;
+            border-radius: 50%;
+        }
+
+        &::before {
+            top: 100px;
+            right: -25px;
+            width: 62px;
+            height: 62px;
+            background-color: #e42a12;
+        }
+
+        &::after {
+            top: 570px;
+            left: -110px;
+            width: 177px;
+            height: 177px;
+            background-color: #b7c9ef;
+        }
+
         &__title {
             margin-bottom: 20px;
         }
@@ -82,6 +111,11 @@
         &__inner {
             grid-template-columns: 1fr;
             gap: 20px;
+        }
+
+        &__item {
+            grid-column: span 1 !important;
+            padding: 0 !important;
         }
 
         &__decor {

@@ -1,12 +1,7 @@
 include layout/utils
 
 -
-    var slides = [
-        {
-            firstSubtitle: 'Приходите в ЦДБ Родина',
-            title: 'Здесь вы можете вкусно <span class="red">поесть</span>, сделать <span class="red">покупки</span> и отлично <span class"red">развлечься</span>',
-            secondSubTitle: 'Мы собрали услуги в одном месте для удобного поиска',
-            images: [
+    var images = [
                 {
                     size: 'small',
                     image: require('assets/static/main-hero1.png'),
@@ -33,84 +28,17 @@ include layout/utils
                     image: require('assets/static/main-hero3.png'),
                 },
             ]
-        },
-        {
-            firstSubtitle: 'Подзаголовок второго слайда',
-            title: 'Заголовок второго слайда',
-            secondSubTitle: 'Подзаголовок второго слайда',
-            images: [
-                {
-                    size: 'small',
-                    image: require('assets/static/main-hero5.png'),
-                }, {
-                    size: 'medium',
-                    image: require('assets/static/main-hero4.png'),
-                }, {
-                    size: 'small',
-                    image: require('assets/static/main-hero1.png'),
-                }, {
-                    size: 'main',
-                    image: require('assets/static/main-hero2.png'),
-                }, {
-                    size: 'small',
-                    image: require('assets/static/main-hero3.png'),
-                }, {
-                    size: 'medium',
-                    image: require('assets/static/main-hero1.png'),
-                }, {
-                    size: 'small',
-                    image: require('assets/static/main-hero6.png'),
-                }, {
-                    size: 'medium',
-                    image: require('assets/static/main-hero3.png'),
-                },
-            ]
-        },
-        {
-            firstSubtitle: 'Подзаголовок третьего слайда',
-            title: 'Заголовок третьего слайда',
-            secondSubTitle: 'Подзаголовок третьего слайда',
-            images: [
-                {
-                    size: 'small',
-                    image: require('assets/static/main-hero2.png'),
-                }, {
-                    size: 'medium',
-                    image: require('assets/static/main-hero1.png'),
-                }, {
-                    size: 'small',
-                    image: require('assets/static/main-hero4.png'),
-                }, {
-                    size: 'main',
-                    image: require('assets/static/main-hero3.png'),
-                }, {
-                    size: 'small',
-                    image: require('assets/static/main-hero7.png'),
-                }, {
-                    size: 'medium',
-                    image: require('assets/static/main-hero6.png'),
-                }, {
-                    size: 'small',
-                    image: require('assets/static/main-hero5.png'),
-                }, {
-                    size: 'medium',
-                    image: require('assets/static/main-hero1.png'),
-                },
-            ]
-        }
-    ]
 
-.section-wrapper__gradient.main-hero.swiper
-    .swiper-wrapper
-        each item in slides
-            .swiper-slide.main-hero__slide
-                .main-hero__slide-text
-                    .main-hero__slide-subtitle= item.firstSubtitle
-                    .main-hero__slide-title!= item.title
-                    .main-hero__slide-subtitle= item.secondSubTitle
-                    button.main-hero__slide-button Перейти к услугам
-                .main-hero__slide-images
-                    each image in item.images
-                        +img(image.image).main-hero__slide-image(class=image.size)
-                    each item in Array(4)
-                        .main-hero__slide-circle
+.section-wrapper__gradient.main-hero
+    .main-hero__content
+        .main-hero__content-text
+            .main-hero__content-subtitle Приходите в ЦДБ Родина
+            .main-hero__content-title Здесь вы можете вкусно #[span.red поесть], сделать #[span.red покупки] и отлично #[span.red развлечься]
+            .main-hero__content-subtitle Мы собрали услуги в одном месте для удобного поиска
+            button.main-hero__content-button Перейти к услугам
+        .main-hero__content-images
+            .main-hero__content-images__inner
+                each image in images
+                    +img(image.image).main-hero__content-image(class=image.size)
+                each item in Array(4)
+                    .main-hero__content-circle

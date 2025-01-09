@@ -4,18 +4,29 @@
 @use 'node_modules/swiper/modules/autoplay';
 
 .section-wrapper__gradient.main-hero {
-    padding: 0;
-    height: 865px;
+    padding-top: 0;
 }
 
 .main-hero {
-    &__slide {
-        padding-top: 140px;
-        padding-left: 160px;
+    padding: 0;
+
+    &__content {
         display: flex;
 
+        &-images {
+            width: 100%;
+            height: 865px;
+            overflow: hidden;
+
+            &__inner {
+                position: relative;
+            }
+        }
+
         &-text {
-            width: 815px;
+            padding: 140px 0 140px 160px;
+            width: 100%;
+            max-width: 815px;
             display: flex;
             flex-direction: column;
         }
@@ -63,39 +74,39 @@
             }
 
             &:first-child {
-                top: -75px;
+                top: 41px;
                 right: 555px;
             }
             &:nth-child(2) {
-                top: -116px;
+                top: 0;
                 right: 160px;
             }
             &:nth-child(3) {
-                top: 362px;
+                top: 478px;
                 right: 775px;
             }
 
             &:nth-child(4) {
-                top: 126px;
+                top: 242px;
                 right: 245px;
             }
             &:nth-child(5) {
-                top: 195px;
+                top: 311px;
                 right: 76px;
             }
 
             &:nth-child(6) {
-                right: 735px;
-                bottom: 33px;
+                top: 692px;
+                right: 620px;
             }
             &:nth-child(7) {
+                top: 742px;
                 right: 263px;
-                bottom: 89px;
             }
 
             &:nth-child(8) {
+                top: 533px;
                 right: -22px;
-                bottom: 183px;
             }
         }
 
@@ -130,12 +141,12 @@
         height: fit-content;
     }
     .main-hero {
-        &__slide {
+        &__content {
             padding: 0;
             flex-direction: column-reverse;
 
             &-text {
-                padding: 250px 27px 74px;
+                padding: 0 27px 74px;
                 width: 100%;
                 text-align: center;
             }
@@ -161,6 +172,10 @@
 
             &-circle {
                 display: none;
+            }
+
+            &-images {
+                height: 250px;
             }
 
             &-image {

@@ -1,0 +1,91 @@
+.business-hero {
+    margin-top: 80px;
+
+    &__title {
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    &__inner {
+        grid-template-columns: repeat(15, 1fr);
+        gap: 35px;
+        display: grid;
+    }
+
+    &__item {
+        grid-column: span 5;
+        display: block;
+
+        &:nth-child(2) {
+            grid-column: span 6;
+            padding-left: 75px;
+        }
+
+        &:nth-child(3) {
+            grid-column: span 5;
+        }
+
+        &:nth-child(4) {
+            grid-column: span 7;
+        }
+    }
+
+    &__decor {
+        position: relative;
+        display: block;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        &--blue {
+            grid-column: span 4;
+
+            &::before {
+                width: 149px;
+                height: 149px;
+                background-color: #b7c9ef;
+            }
+
+            &::after {
+                right: 0;
+                bottom: 0;
+                width: 51px;
+                height: 51px;
+                background-color: #5480da;
+            }
+        }
+
+        &--red {
+            grid-column: span 3;
+
+            &::after {
+                right: 58px;
+                bottom: 140px;
+                width: 35px;
+                height: 35px;
+                background-color: var(--red);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .business-hero {
+        &__title {
+            margin-bottom: 20px;
+        }
+
+        &__inner {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        &__decor {
+            display: none;
+        }
+    }
+}

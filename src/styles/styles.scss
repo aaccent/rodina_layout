@@ -9,6 +9,7 @@
 
 // Ui
 @use 'ui/buttons/close-btn';
+@use 'ui/cards/business-card';
 @use 'ui/text';
 
 // Layout
@@ -16,3 +17,6 @@
 @use 'layout/footer/footer';
 @use 'layout/menu/menu';
 @use 'layout/contacts-block/contacts-block';
+
+// Pages
+@use 'pages/business/business';

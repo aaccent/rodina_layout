@@ -1,3 +1,3 @@
 import '@/features/popup/popup'
 import 'layout/header/header.js'
-import 'components/entertament-block/entertament-block.js'
+import 'components/entertainment-block/entertainment-block.js'

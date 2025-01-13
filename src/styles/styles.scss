@@ -10,6 +10,9 @@
 // Ui
 @use 'ui/buttons/close-btn';
 @use 'ui/card/card';
+@use 'ui/form/rent/rent';
+@use 'ui/form/contact/contact';
+@use 'ui/input/input';
 
 // Layout
 @use 'layout/header/header';
@@ -17,4 +20,5 @@
 @use 'layout/menu/menu';
 @use 'layout/contacts-block/contacts-block';
 
+// Components
 @use 'components/card-list/card-list';

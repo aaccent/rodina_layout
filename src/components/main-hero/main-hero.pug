@@ -1,0 +1,44 @@
+include layout/utils
+
+-
+    var images = [
+                {
+                    size: 'small',
+                    image: require('assets/static/main-hero1.png'),
+                }, {
+                    size: 'medium',
+                    image: require('assets/static/main-hero2.png'),
+                }, {
+                    size: 'small',
+                    image: require('assets/static/main-hero3.png'),
+                }, {
+                    size: 'main',
+                    image: require('assets/static/main-hero4.png'),
+                }, {
+                    size: 'small',
+                    image: require('assets/static/main-hero5.png'),
+                }, {
+                    size: 'medium',
+                    image: require('assets/static/main-hero6.png'),
+                }, {
+                    size: 'small',
+                    image: require('assets/static/main-hero7.png'),
+                }, {
+                    size: 'medium',
+                    image: require('assets/static/main-hero3.png'),
+                },
+            ]
+
+.section-wrapper__gradient.main-hero
+    .main-hero__content
+        .main-hero__content-text
+            .main-hero__content-subtitle Приходите в ЦДБ Родина
+            .main-hero__content-title Здесь вы можете вкусно #[span.red поесть], сделать #[span.red покупки] и отлично #[span.red развлечься]
+            .main-hero__content-subtitle Мы собрали услуги в одном месте для удобного поиска
+            button.main-hero__content-button Перейти к услугам
+        .main-hero__content-images
+            .main-hero__content-images__inner
+                each image in images
+                    +img(image.image).main-hero__content-image(class=image.size)
+                each item in Array(4)
+                    .main-hero__content-circle

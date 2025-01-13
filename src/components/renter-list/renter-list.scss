@@ -1,0 +1,64 @@
+@use 'styles/utils';
+
+.renter-list {
+    &__title {
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    &__list {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0 35px;
+        display: grid;
+    }
+
+    &__item {
+        gap: 25px;
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #d0d9eb;
+    }
+
+    &__item-img {
+        object-fit: cover;
+        object-position: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+    }
+
+    &__item-title {
+        font-size: 2.4rem;
+        font-weight: 500;
+        line-height: 3.3rem;
+    }
+}
+
+@media only screen and (max-width: utils.$mobile600) {
+    .renter-list {
+        &__title {
+            margin-bottom: 15px;
+        }
+
+        &__list {
+            gap: 0;
+            grid-template-columns: 1fr;
+        }
+
+        &__item {
+            gap: 10px;
+            padding: 10px;
+        }
+
+        &__item-img {
+            width: 19px;
+            height: 19px;
+        }
+
+        &__item-title {
+            font-size: 1.6rem;
+            line-height: 2.2rem;
+        }
+    }
+}

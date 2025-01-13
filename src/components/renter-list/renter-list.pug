@@ -1,0 +1,31 @@
+include layout/utils
+
+-
+    var list = [
+        { title: 'Кинотеатр Алмаз', logo: require('assets/content/renters/renter-3.jpg') },
+        { title: 'Фермерская лавка «SALUMERIA»', logo: require('assets/content/renters/renter-4.jpg') },
+        { title: 'Салон сигар ВЖ', logo: require('assets/content/renters/renter-14.jpg') },
+        { title: 'Lazer Land Kazan', logo: require('assets/content/renters/renter-1.jpg') },
+        { title: 'Галлерея «Ак барс»', logo: require('assets/content/renters/renter-2.jpg') },
+        { title: 'Магазин одежды «Peserico» ', logo: require('assets/content/renters/renter-16.jpg') },
+        { title: 'Модельный покер ', logo: require('assets/content/renters/renter-5.jpg') },
+        { title: 'Кофейня «Бинхартс»', logo: require('assets/content/renters/renter-6.jpg') },
+        { title: 'Парк VR «The Deep» ', logo: require('assets/content/renters/renter-18.jpg') },
+        { title: 'СтендАпКлубКазань', logo: require('assets/content/renters/renter-7.jpg') },
+        { title: 'Киберспортивный клуб VAULT44', logo: require('assets/content/renters/renter-8.jpg') },
+        { title: 'Галерея искусcтва «БИЗОН»', logo: require('assets/content/renters/renter-13.jpg') },
+        { title: 'Авиасимулятор «Боинг 737»', logo: require('assets/content/renters/renter-9.jpg') },
+        { title: 'Ресторан Cheeseria', logo: require('assets/content/renters/renter-10.jpg') },
+        { title: 'Ирландский паб «Тринити»', logo: require('assets/content/renters/renter-15.jpg') },
+        { title: 'Кулинарная мастерская «Тарелка»', logo: require('assets/content/renters/renter-11.jpg') },
+        { title: 'Гриль-бар «Шашлыкофф»', logo: require('assets/content/renters/renter-12.jpg') },
+        { title: 'Мужской клуб «Burlesque»', logo: require('assets/content/renters/renter-17.jpg') },
+    ]
+
+.renter-list.container
+    h2.renter-list__title.section-title Список всех арендаторов
+    ul.renter-list__list
+        each item in list
+            li.renter-list__item
+                +img(item.logo).renter-list__item-img
+                span.renter-list__item-title= item.title

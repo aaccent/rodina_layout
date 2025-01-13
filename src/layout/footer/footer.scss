@@ -9,6 +9,7 @@
     .container {
         --padding-bottom: 120px;
         position: relative;
+        z-index: 20;
         margin: 0 auto;
         padding: 50px 0 var(--padding-bottom);
         display: flex;

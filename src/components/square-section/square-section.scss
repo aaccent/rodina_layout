@@ -1,0 +1,69 @@
+@use 'styles/utils';
+
+.square-section {
+    position: relative;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        z-index: -2;
+        border-radius: 100%;
+    }
+
+    &::before {
+        top: 60px;
+        right: 416px;
+        width: 220px;
+        height: 220px;
+        background-color: var(--red);
+    }
+
+    &::after {
+        bottom: 10px;
+        left: 275px;
+        width: 170px;
+        height: 170px;
+        background-color: #b7c9ef;
+    }
+
+    &__title {
+        margin-bottom: 80px;
+        text-align: center;
+    }
+
+    &__list {
+        gap: 35px;
+        display: flex;
+    }
+
+    &__info-text {
+        margin: 50px auto 0;
+        max-width: 580px;
+        color: #202020;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: utils.$mobile600) {
+    .square-section {
+        &::before,
+        &::after {
+            display: none;
+        }
+
+        &__title {
+            margin-bottom: 37px;
+            line-height: 100%;
+        }
+
+        &__list {
+            gap: 20px;
+            flex-direction: column;
+        }
+
+        &__info-text {
+            display: none;
+        }
+    }
+}

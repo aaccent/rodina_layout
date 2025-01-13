@@ -14,6 +14,9 @@
 @use 'ui/form/contact/contact';
 @use 'ui/input/input';
 @use 'ui/buttons/button';
+@use 'ui/cards/business-card';
+@use 'ui/cards/floor-card';
+@use 'ui/text';
 
 // Layout
 @use 'layout/header/header';
@@ -25,3 +28,6 @@
 @use 'components/card-list/card-list';
 @use 'components/main-hero/main-hero';
 @use 'components/restaurant-block/restaurant-block';
+
+// Pages
+@use 'pages/business/business';

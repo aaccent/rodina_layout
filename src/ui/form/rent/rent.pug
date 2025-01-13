@@ -3,7 +3,7 @@ include ui/input/input
 
 section.form
     form.rent-form(novalidate, data-handler='/action.php')
-        .rent-form__title Станьте арендатором
+        h2.rent-form__title Станьте арендатором
         .rent-form__content
             +field({type: 'text', required: true, placeholder: 'Ваше ФИО', name: 'name'})
             +field({type: 'text', required: true, placeholder: 'Название организации', name: 'organization'})

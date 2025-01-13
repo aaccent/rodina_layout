@@ -1,0 +1,19 @@
+include layout/utils
+
+mixin entertainmentCard(props)
+    -
+        var props = Object.assign({
+            image: '',
+            title: '',
+            floor: '',
+            link: '#'
+        }, props || {})
+
+    .entertainment-card&attributes(attributes)
+        +anchor(props.link)
+            +img(props.image).entertainment-card__image
+        .entertainment-card__info
+            .entertainment-card__title= props.title
+            .entertainment-card__floor
+                button.entertainment-card__button: +anchor('') Подробнее
+                p= props.floor

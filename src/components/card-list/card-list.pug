@@ -1,0 +1,41 @@
+include layout/utils
+include ui/card/card
+
+-
+    var cards = [
+        {
+            title:'Парк VR «The Deep»',
+            floor: '1 этаж',
+            icon: 'assets/icons/entertainment-icons/1.svg',
+            image:'assets/icons/entertainment-images/1.jpg',
+        },{
+            title:'Кинотеатр АЛМАЗ Синема',
+            floor: '1 этаж',
+            icon: 'assets/icons/entertainment-icons/2.svg',
+            image:'assets/icons/entertainment-images/2.jpg',
+        },{
+            title:'Авиасимулятор  «Боинг 737»',
+            floor: '1 этаж',
+            icon: 'assets/icons/entertainment-icons/3.svg',
+            image:'assets/icons/entertainment-images/3.jpg',
+        },{
+            title:'Кулинарные мастер классы Тарелка',
+            floor: '1 этаж',
+            icon: 'assets/icons/entertainment-icons/4.svg',
+            image:'assets/icons/entertainment-images/4.jpg',
+        },{
+            title:'Авиасимулятор  «Боинг 737»',
+            floor: '1 этаж',
+            icon: 'assets/icons/entertainment-icons/5.svg',
+            image:'assets/icons/entertainment-images/5.jpg',
+        },
+    ]
+
+
+
+.card-list
+    .card-list__decor._blue
+    .card-list__decor._gray
+    .card-list__decor._red
+    each item in cards
+        +card({type: 'entertainment', item})

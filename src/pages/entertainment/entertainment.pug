@@ -1,0 +1,11 @@
+extends layout/page
+include layout/utils
+
+block prepend head
+    - title = 'Развлечения'
+
+block append main
+    .section-wrapper__gradient
+        .page-title Развлечения
+        +section.entertainment
+            include components/card-list/card-list

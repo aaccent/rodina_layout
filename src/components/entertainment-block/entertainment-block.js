@@ -6,13 +6,19 @@ void (function () {
     if (!entertainmentSlider) return
     new Swiper(entertainmentSlider, {
         modules: [Navigation],
-        slidesPerView: 5,
-        initialSlide: 2,
-        centeredSlides: true,
+        slidesPerView: 1,
         loop: true,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
+        },
+
+        breakpoints: {
+            1000: {
+                slidesPerView: 5,
+                initialSlide: 2,
+                centeredSlides: true,
+            },
         },
     })
 

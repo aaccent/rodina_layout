@@ -49,3 +49,25 @@
         color: var(--red);
     }
 }
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .entertainment-card {
+        height: 426px;
+
+        &__image {
+            border-radius: 20px;
+        }
+
+        &__info {
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        &__title {
+            font-size: 1.8rem;
+        }
+        &__floor {
+            font-size: 1.6rem;
+        }
+    }
+}

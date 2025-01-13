@@ -13,6 +13,7 @@
 @use 'ui/form/rent/rent';
 @use 'ui/form/contact/contact';
 @use 'ui/input/input';
+@use 'ui/buttons/button';
 
 // Layout
 @use 'layout/header/header';
@@ -23,3 +24,4 @@
 // Components
 @use 'components/card-list/card-list';
 @use 'components/main-hero/main-hero';
+@use 'components/restaurant-block/restaurant-block';

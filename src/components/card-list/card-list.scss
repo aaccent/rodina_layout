@@ -1,0 +1,62 @@
+@use 'styles/utils';
+
+.section-wrapper__gradient:has(.card-list) {
+    position: relative;
+}
+
+.card-list {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 35px;
+    row-gap: 64px;
+    margin-top: 40px;
+    display: grid;
+
+    &__decor {
+        position: absolute;
+        z-index: 1;
+
+        &._blue {
+            @include utils.circle(50px);
+            right: 457px;
+            bottom: 481px;
+            background-color: hsl(220, 64%, 59%);
+        }
+        &._gray {
+            @include utils.circle(170px);
+            right: 115px;
+            bottom: 65px;
+            background-color: hsl(221, 64%, 83%);
+        }
+        &._red {
+            @include utils.circle(280px);
+            right: -80px;
+            bottom: -80px;
+            background-color: var(--red);
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .card-list {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+        z-index: 1;
+        margin-top: 20px;
+
+        &__decor {
+            &._red {
+                top: 0;
+                right: -150px;
+            }
+
+            &._blue {
+                @include utils.circle(206px);
+                top: 784px;
+                right: -100px;
+            }
+            &._gray {
+                display: none;
+            }
+        }
+    }
+}

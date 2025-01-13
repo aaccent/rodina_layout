@@ -1,0 +1,191 @@
+@use 'styles/utils';
+
+.contact-form {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 919px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 0 20px 0 rgba(37, 67, 127, 0.25);
+    border-radius: 20px;
+
+    &__decor {
+        position: relative;
+        padding: 40px;
+
+        &-red {
+            @include utils.circle(220px);
+            position: absolute;
+            z-index: 2;
+            bottom: -45px;
+            left: -45px;
+            background-color: var(--red);
+        }
+
+        &-gray {
+            @include utils.circle(395px);
+            position: absolute;
+            bottom: -250px;
+            left: 112px;
+            background-color: hsl(221, 64%, 83%);
+        }
+
+        &-image {
+            position: absolute;
+            z-index: 3;
+            bottom: 25px;
+            width: 100%;
+            max-width: 106px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 22px;
+        font-size: 2rem;
+        font-weight: 800;
+    }
+
+    &__text {
+        font-size: 1.4rem;
+    }
+
+    &__content {
+        z-index: 4;
+        padding: 40px 30px;
+        width: 100%;
+        max-width: 578px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        font-size: 1.4rem;
+        box-shadow: 0 0 20px 0 rgba(37, 67, 127, 0.25);
+        background-color: white;
+        border-radius: 20px;
+
+        .field {
+            margin-bottom: 21px;
+            width: 100%;
+
+            &:has([name='tel']),
+            &:has([name='email']) {
+                width: 47%;
+            }
+
+            &:has([name='file']) {
+                position: relative;
+                margin: 31px 0 16px;
+                height: 43px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1rem;
+                border: 1px dashed var(--gray);
+
+                &._dragover {
+                    border-style: solid;
+                }
+            }
+
+            input[name='file'] {
+                inset: 0;
+                position: absolute;
+                pointer-events: none;
+                opacity: 0;
+            }
+        }
+    }
+
+    &__privacy {
+        display: flex;
+        justify-content: space-between;
+        p {
+            width: 100%;
+            max-width: 334px;
+            color: var(--gray);
+            font-size: 1.2rem;
+        }
+    }
+
+    &__button {
+        padding: 7px 40px;
+        color: white;
+        font-size: 1.6rem;
+        font-weight: 800;
+        background-color: var(--red);
+        border-radius: 10px;
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .contact-form {
+        flex-direction: column;
+
+        &__decor {
+            padding: 20px;
+            min-height: 225px;
+
+            &-red {
+                @include utils.circle(162px);
+                left: -30px;
+            }
+
+            &-gray {
+                bottom: -300px;
+                left: 65px;
+            }
+
+            &-image {
+                bottom: 0;
+                transform: rotate(15deg);
+                max-width: 77px;
+            }
+        }
+
+        &__title {
+            margin-bottom: 5px;
+            font-size: 2.4rem;
+        }
+        &__text {
+            position: relative;
+            z-index: 4;
+            font-size: 1.6rem;
+            line-height: 21px;
+        }
+
+        &__content {
+            padding: 30px 20px 40px;
+
+            .field {
+                margin-bottom: 28px;
+
+                &:has([name='tel']),
+                &:has([name='email']) {
+                    width: 100%;
+                }
+
+                &:has([name='file']) {
+                    margin: 0 0 20px;
+                }
+            }
+        }
+
+        &__privacy {
+            gap: 20px;
+            flex-direction: column;
+
+            p {
+                order: 2;
+
+                a {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &__button {
+            padding: 15px 0;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}

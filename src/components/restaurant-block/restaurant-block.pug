@@ -1,0 +1,42 @@
+include layout/utils
+-
+    var restaurants = [
+        {
+            title: 'Кофейня «Бинхартс»',
+            description: '«Бинхартс» —это кофейня, вобравшая в себя лучшее от американского и европейского формата кофеен. Поэтому вы можете забежать в кафе перед работой, выпить двойной эспрессо и позавтракать настоящими американскими сэндвичами. Или в уютной атмосфере выпить чашечку кофе по-венски и попробовать свежие, горячие круассаны.',
+            icon: 'assets/content/restaurants/icons/1.png',
+            images: ['assets/content/restaurants/1.png','assets/content/restaurants/2.png','assets/content/restaurants/3.png','assets/content/restaurants/4.png']
+        },{
+            title: 'Заведение',
+            description: 'Описание заведения',
+            icon: 'assets/content/restaurants/icons/2.png',
+            images: ['assets/content/restaurants/3.png','assets/content/restaurants/4.png','assets/content/restaurants/1.png', 'assets/content/restaurants/2.png']
+        },{
+            title: 'Заведение 3',
+            description: 'Описание заведения 3',
+            icon: 'assets/content/restaurants/icons/3.png',
+            images: ['assets/content/restaurants/2.png','assets/content/restaurants/1.png','assets/content/restaurants/4.png','assets/content/restaurants/3.png']
+        },
+    ]
+
++section.restaurant-block
+    .restaurant-block__info
+        h2.restaurant-block__title Рестораны
+        .restaurant-block__subtitle Вас ждет все самое вкусное
+        .restaurant-block__description Первый и второй этажи занимает торговая галерея, представленная мировыми брендами: одежда, обувь, бытовая техника и электроника, спортивные товары, товары для детей и многое другое.
+        .button.restaurant-block__button: +anchor Список ресторанов
+    .restaurant-block__slider.swiper
+        .swiper-wrapper
+            each slide in restaurants
+                .restaurant-block__slide.swiper-slide
+                    .restaurant-block__slide-images-wrapper
+                        each image in slide.images
+                            +img(require(image)).restaurant-block__slide-image
+                    .restaurant-block__slide-info
+                        .restaurant-block__slide-title= slide.title
+                        .restaurant-block__slide-description= slide.description
+                        +img(require(slide.icon)).restaurant-block__slide-icon
+        .swiper-button-prev
+            p Назад
+        .swiper-button-next
+            p Далее

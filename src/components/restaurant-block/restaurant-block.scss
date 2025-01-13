@@ -4,8 +4,6 @@
 @use 'node_modules/swiper/modules/navigation';
 
 .restaurant-block {
-    padding-top: 150px;
-
     .container {
         width: 1600px;
         display: flex;
@@ -151,8 +149,6 @@
 
 @media screen and (max-width: utils.$tablet1000) {
     .restaurant-block {
-        padding-top: 25px;
-
         .container {
             flex-direction: column;
         }

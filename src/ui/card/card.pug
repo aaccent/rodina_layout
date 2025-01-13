@@ -1,0 +1,26 @@
+include layout/utils
+
+mixin card(props)
+    -
+        var props = Object.assign({
+            type: 'news' || 'entertainment',
+            item: {
+                image: '',
+                icon: '',
+                title: '',
+                floor: '',
+                date: ''
+            }
+        }, props || {})
+    .card
+        .card-container
+            .card-container__image
+                +img(require(`${props.item.image}?as=webp`)).card-image
+                if props.type === 'entertainment' && props.item.icon
+                    +img(require(props.item.icon)).card-icon
+            .card__content
+                .card-title= props.item.title
+                .card-info= props.type === 'entertainment' ? props.item.floor : props.item.date
+        if props.type=== 'news'
+            .card__floor= props.item.floor
+        button.card-button: +anchor Подробнее

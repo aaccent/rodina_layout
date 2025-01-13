@@ -1,0 +1,17 @@
+@use 'styles/utils';
+
+.field {
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--gray);
+
+    &:has(input.invalid) {
+        border-bottom-color: var(--red);
+    }
+
+    &__input {
+        &::placeholder {
+            color: var(--black);
+            font-size: 1.4rem;
+        }
+    }
+}

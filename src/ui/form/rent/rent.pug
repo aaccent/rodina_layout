@@ -1,0 +1,13 @@
+include layout/utils
+include ui/input/input
+
+section.form
+    form.rent-form(novalidate, data-handler='/action.php')
+        h2.rent-form__title Станьте арендатором
+        .rent-form__content
+            +field({type: 'text', required: true, placeholder: 'Ваше ФИО', name: 'name'})
+            +field({type: 'text', required: true, placeholder: 'Название организации', name: 'organization'})
+            +field({type: 'tel', required: true, placeholder: 'Телефон', name: 'tel'})
+            +field({type: 'email', required: true, placeholder: 'Электронная почта', name: 'email'})
+            .rent-form__privacy Нажимая на кнопку «Отправить» вы соглашаетесь на обработку персональных данных
+            button.rent-form__button(type='submit') Отправить

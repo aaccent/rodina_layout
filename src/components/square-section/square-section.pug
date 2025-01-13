@@ -1,0 +1,43 @@
+include layout/utils
+
+-
+    var list = [
+        {
+            img: require('assets/content/floor-plans/plan-1.jpg'),
+            title: '5 этаж',
+            text: '249,3 м²<br/>' +
+                    '- Ставка аренды 1000 руб./кв.м<br/>' +
+                    '- Ставка эксплуатации 181 руб./кв.м<br/>' +
+                    '- Коммунальные платежи по счётчикам',
+        },
+        {
+            img: require('assets/content/floor-plans/plan-2.jpg'),
+            title: '4 этаж',
+            text: '52 м²<br/>' +
+                    '- Ставка аренды 1000 руб./кв.м<br/>' +
+                    '- Ставка эксплуатации 181 руб./кв.м<br/>' +
+                    '- Коммунальные платежи по счётчикам',
+        },
+        {
+            img: require('assets/content/floor-plans/plan-3.jpg'),
+            title: '4 этаж',
+            text: '133,6 м²<br/>' +
+                    '- Ставка аренды 1000 руб./кв.м<br/>' +
+                    '- Ставка эксплуатации 181 руб./кв.м<br/>' +
+                    '- Коммунальные платежи по счётчикам',
+        },
+    ]
+
+section.square-section.section: .container
+    h2.square-section__title.section-title Площадь
+    ul.square-section__list
+        each item in list
+            li.floor-card.square-section__item
+                .floor-card__img: +img(item.img)
+                .floor-card__body
+                    .floor-card__title= item.title
+                    .floor-card__text.content: p!= item.text
+    .square-section__info-text.content
+        p
+            | В помещениях чистовая отделка.
+            | Вы можете сразу перейти к приятным хлопотам по обустройству нового офиса.

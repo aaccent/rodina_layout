@@ -1,0 +1,36 @@
+include layout/utils
+
+-
+    var list = [
+        {
+            img: require('assets/content/business-hero/picture-1.jpg'),
+            title: 'Архитектура',
+            text: 'Расположен в историческом центре Казани, с выходом на пешеходную улицу Баумана',
+        },
+        {
+            img: require('assets/content/business-hero/picture-2.jpg'),
+            title: 'Удобство',
+            text: 'В здании ЦБД Родина расположен супермаркет, рестораны, кинотеатр и многое другое',
+        },
+        {
+            img: require('assets/content/business-hero/picture-3.jpg'),
+            title: 'Транспортная доступность',
+            text: 'Метро Кремлевская в 10 минутах ходьбы от комплекса',
+        },
+        {
+            img: require('assets/content/business-hero/picture-4.jpg'),
+            title: 'Паркинг',
+            text: 'Подземный отапливаемый паркинг на 100 мест',
+        },
+    ]
+
+section.business-hero.section: .container
+    h1.business-hero__title.section-title «Бизнес центр «РОДИНА»
+    ul.business-hero__inner
+        li.business-hero__decor.business-hero__decor--blue
+        each item in list
+            li.business-hero__item: +anchor('#').business-card
+                +img(item.img).business-card__img
+                .business-card__title= item.title
+                .business-card__text= item.text
+        li.business-hero__decor.business-hero__decor--red

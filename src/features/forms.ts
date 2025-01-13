@@ -3,7 +3,13 @@ forms.forEach((form) => {
     form.addEventListener('submit', submitHandler)
 })
 
-const formSent = new CustomEvent('form-sent')
+const formSent = new CustomEvent('form-sent', { bubbles: true })
+document.addEventListener('form-sent', (e) => {
+    const form = e.target as HTMLFormElement
+    const inputFileStatusText: HTMLParagraphElement | null = form.querySelector('.field:has(input[type="file"]) p')
+    if (inputFileStatusText) inputFileStatusText.textContent = 'Переместите сюда файл'
+    alert('Заявка отправлена')
+})
 
 /**
  * После передачи события, происходит:
@@ -44,6 +50,7 @@ async function submitHandler(event: SubmitEvent) {
         )
     }
 
+    form.reset()
     form.dispatchEvent(formSent)
 }
 
@@ -55,6 +62,16 @@ async function submitHandler(event: SubmitEvent) {
  */
 function validateForm(form: HTMLFormElement): Boolean {
     let valid = true
+
+    const telInputs = form.querySelectorAll<HTMLInputElement>('input[type="tel"]')
+    telInputs.forEach((input) => {
+        const tel = input.value.replaceAll(/\D/g, '')
+        if (/7\d{10}/.test(tel)) return
+
+        valid = false
+        input.classList.add('invalid')
+        input.addEventListener('input', () => input.classList.remove('invalid'), { once: true })
+    })
 
     const requiredInputs = form.querySelectorAll<HTMLInputElement>('input[required]')
 

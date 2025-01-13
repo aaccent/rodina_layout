@@ -1,0 +1,31 @@
+extends layout/page
+include layout/utils
+
+block append main
+    .contacts
+        .container
+            .map
+                .map-container(data-coords='55.791440, 49.112172')
+                .contacts-container
+                    .contacts-container__decor._red
+                    .contacts-container__decor._blue
+                    .contacts-container__decor._gray
+                    .breadcrumb: +anchor('/') Главная /
+                    h1.page-header Контакты
+                    .contacts__content
+                        .contacts__content-title Адрес
+                        .contacts__content-text
+                            p Казань, ул. Баумана, д. 44/8
+                            button.contacts__button: +anchor('https://yandex.ru/maps/43/kazan/?from=api-maps&ll=49.112172%2C55.791440&mode=routes&origin=jsapi_2_1_79&rtext=~55.791440%2C49.112172&rtt=auto&ruri=~ymapsbm1%3A%2F%2Fgeo%3Fdata%3DIgoN3XJEQhVvKl9C&z=16')(
+                                target='_blank'
+                            ) Как добраться?
+                    .contacts__content
+                        .contacts__content-title Контактный телефон:
+                        .contacts__content-text +7 (843) 293-79-37
+                        .contacts__content-text +7 (937) 778-67-83 (аренда)
+                    .contacts__content
+                        .contacts__content-title Почта:
+                        .contacts__content-text rodina-kzn@yandex.ru
+                    .contacts__content
+                        .contacts__content-title Часы работы:
+                        .contacts__content-text 08:00-22:00

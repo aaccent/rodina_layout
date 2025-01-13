@@ -82,6 +82,7 @@ span.red {
 
 body {
     overflow-x: clip;
+    color: var(--black);
     font-family: var(--nunito);
     font-size: 1.8rem;
     font-weight: 400;
@@ -150,6 +151,51 @@ html.disable-scroll {
     text-align: center;
 
     @media only screen and (max-width: utils.$tablet1000) {
+        font-size: 2.4rem;
+    }
+}
+
+.container:has(.map) {
+    position: relative;
+    max-width: 100%;
+    height: 865px;
+}
+
+.map {
+    inset: 0;
+    position: absolute;
+
+    &-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    [class*='ymaps-2'][class*='-ground-pane'] {
+        filter: grayscale(1) brightness(1.05) contrast(0.9);
+    }
+}
+
+.page-header {
+    color: var(--black);
+    font-size: 4.4rem;
+    font-weight: 800;
+    line-height: 125%;
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .container:has(.map) {
+        height: fit-content;
+    }
+
+    .map {
+        position: static;
+
+        &-container {
+            height: 309px;
+        }
+    }
+
+    .page-header {
         font-size: 2.4rem;
     }
 }

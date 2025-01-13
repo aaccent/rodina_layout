@@ -3,7 +3,10 @@ include layout/utils
 mixin menu(props)
     -
         props = Object.assign({
-            items: [''],
+            items: [{
+                name:'',
+                link:''
+            }],
             column: false,
             bold: false,
         }, props || {})
@@ -11,12 +14,12 @@ mixin menu(props)
         if props.column
             ul.menu__column
                 each item in props.items
-                    li.menu__item: +anchor= item
+                    li.menu__item: +anchor(item.link)= item.name
         else if props.bold
             ul.menu__main
                 each item in props.items
-                    li.menu__item: +anchor= item
+                    li.menu__item: +anchor(item.link)= item.name
         else
             ul
                 each item in props.items
-                    li.menu__item: +anchor= item
+                    li.menu__item: +anchor(item.link)= item.name

@@ -1,0 +1,269 @@
+@use 'styles/utils';
+@use 'node_modules/swiper/swiper';
+@use 'node_modules/swiper/modules/effect-fade';
+@use 'node_modules/swiper/modules/navigation';
+
+.restaurant-block {
+    .container {
+        width: 1600px;
+        display: flex;
+    }
+
+    &__info {
+        min-width: 446px;
+        max-width: 446px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        margin-bottom: 15px;
+        opacity: 0.35;
+    }
+
+    &__subtitle {
+        margin-bottom: 25px;
+        font-size: 4.4rem;
+        font-weight: 800;
+        line-height: 125%;
+    }
+
+    &__description {
+        margin-bottom: 40px;
+    }
+
+    &__slider {
+        left: -83px;
+        min-width: 1237px;
+        max-width: 1237px;
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            @include utils.circle(50px);
+            top: 525px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1.5px solid var(--red);
+
+            p {
+                display: none;
+            }
+
+            &::after {
+                content: '';
+                width: 8px;
+                height: 16px;
+                display: block;
+                @include utils.bg-defaults(cover);
+                background-image: url('assets/icons/arrow.svg');
+            }
+        }
+
+        .swiper-button-next {
+            right: 415px;
+        }
+
+        .swiper-button-prev {
+            right: 482px;
+            left: auto;
+
+            &::after {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__slide {
+        position: relative;
+        display: flex;
+
+        &-images-wrapper {
+            position: relative;
+            min-width: 650px;
+            max-width: 650px;
+            height: 674px;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
+
+        &-image {
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            border-radius: 40px;
+            border: 5px solid white;
+
+            &:first-child {
+                @include utils.square(500px);
+                object-position: right;
+                position: static;
+                border: none;
+            }
+
+            &:nth-child(2) {
+                @include utils.square(150px);
+                top: 0;
+                right: 50%;
+                transform: translateX(50%);
+            }
+
+            &:nth-child(3) {
+                @include utils.square(265px);
+                bottom: 0;
+                left: 0;
+            }
+
+            &:nth-child(4) {
+                @include utils.square(150px);
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(50%);
+            }
+        }
+
+        &-info {
+            margin-left: 53px;
+            padding-top: 75px;
+        }
+
+        &-title {
+            color: var(--red);
+            font-size: 2.4rem;
+            font-weight: 800;
+        }
+
+        &-description {
+            margin: 15px 0 40px;
+        }
+
+        &-icon {
+            object-fit: contain;
+            object-position: center;
+            width: 140px;
+            height: 135px;
+        }
+    }
+}
+
+@media screen and (max-width: utils.$tablet1000) {
+    .restaurant-block {
+        .container {
+            flex-direction: column;
+        }
+
+        &__info {
+            min-width: 100%;
+            max-width: 100%;
+        }
+
+        &__title {
+            margin-bottom: 5px;
+            text-transform: lowercase;
+        }
+
+        &__subtitle {
+            margin-bottom: 10px;
+            font-size: 2.4rem;
+        }
+
+        &__description {
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+        }
+
+        &__slider {
+            left: auto;
+            margin-top: 30px;
+            padding-bottom: 112px;
+            min-width: 100%;
+            max-width: 100%;
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                gap: 5px;
+                top: auto;
+                bottom: 50px;
+                padding: 10px 0;
+                width: 165px;
+                height: fit-content;
+                border-radius: 50px;
+
+                &::after {
+                    width: 4px;
+                    height: 8px;
+                }
+                p {
+                    display: block;
+                    color: var(--black);
+                    font-size: 1.6rem;
+                    font-weight: 800;
+                }
+            }
+
+            .swiper-button-prev {
+                right: auto;
+                left: 0;
+                flex-direction: row-reverse;
+            }
+
+            .swiper-button-next {
+                right: 0;
+            }
+        }
+
+        &__slide {
+            height: fit-content;
+            flex-direction: column;
+
+            &-images-wrapper {
+                min-width: 100%;
+                max-width: 100%;
+                height: 360px;
+            }
+
+            &-image {
+                border-radius: 20px;
+                &:first-child {
+                    @include utils.square(265px);
+                }
+
+                &:nth-child(2) {
+                    @include utils.square(80px);
+                }
+
+                &:nth-child(3) {
+                    @include utils.square(140px);
+                }
+
+                &:nth-child(4) {
+                    @include utils.square(80px);
+                    bottom: 17px;
+                }
+            }
+
+            &-info {
+                position: relative;
+                margin: 0;
+                padding: 34px 0 0;
+            }
+
+            &-title {
+                font-size: 1.8rem;
+            }
+
+            &-description {
+                margin: 10px 0 0;
+                font-size: 1.6rem;
+            }
+
+            &-icon {
+                @include utils.square(61px);
+                position: absolute;
+                top: -30px;
+                left: 155px;
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+include layout/utils
+
+mixin form(props)
+    -
+        var props = Object.assign({type: 'contact'}, props || {})
+    if props.type === 'rent'
+        include ui/form/rent/rent
+    else
+        include ui/form/contact/contact

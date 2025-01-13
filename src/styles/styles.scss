@@ -9,6 +9,11 @@
 
 // Ui
 @use 'ui/buttons/close-btn';
+@use 'ui/card/card';
+@use 'ui/form/rent/rent';
+@use 'ui/form/contact/contact';
+@use 'ui/input/input';
+@use 'ui/buttons/button';
 @use 'ui/cards/business-card';
 @use 'ui/cards/floor-card';
 @use 'ui/text';
@@ -18,6 +23,11 @@
 @use 'layout/footer/footer';
 @use 'layout/menu/menu';
 @use 'layout/contacts-block/contacts-block';
+
+// Components
+@use 'components/card-list/card-list';
+@use 'components/main-hero/main-hero';
+@use 'components/restaurant-block/restaurant-block';
 
 // Pages
 @use 'pages/business/business';

@@ -1,6 +1,7 @@
 @use 'styles/utils';
 
 .footer {
+    z-index: 10;
     font-family: var(--inter), sans-serif;
     font-size: 1.8rem;
     background-color: hsl(220, 64%, 95%);

@@ -8,5 +8,10 @@ mixin field(props)
         }, props || {})
 
     label.field&attributes(attributes)
-        input.field__input(name=props.name, type=props.type, placeholder=props.placeholder, required=props.required)
+        +wrapBreak: input.field__input(
+            name=props.name,
+            type=props.type,
+            placeholder=props.placeholder,
+            required=props.required
+        )
         block

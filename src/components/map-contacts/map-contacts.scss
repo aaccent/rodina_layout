@@ -1,0 +1,101 @@
+@use 'styles/utils';
+
+.map-contacts {
+    position: absolute;
+    z-index: 10;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 30px 35px;
+    width: 100%;
+    max-width: 1600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+
+    &__header {
+        font-size: 4.4rem;
+        font-weight: 800;
+    }
+
+    &__container {
+        display: flex;
+        align-items: end;
+    }
+
+    &__content {
+        gap: 5px;
+        display: flex;
+        flex-direction: column;
+
+        &:not(:first-child) {
+            margin-left: 77px;
+        }
+
+        &-title {
+            color: var(--red);
+            font-size: 1.8rem;
+        }
+
+        &-text {
+            font-size: 2.4rem;
+            font-weight: 800;
+        }
+    }
+
+    &__button {
+        margin-left: 15px;
+        padding: 15px 24px;
+        font-size: 1.6rem;
+        font-weight: 800;
+        text-align: center;
+        border-radius: 15px;
+        border: 2px solid var(--red);
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .map-contacts {
+        gap: 20px;
+        position: relative;
+        top: -50px;
+        padding: 20px;
+        max-width: 345px;
+        flex-direction: column;
+        align-items: start;
+        border: 1px solid var(--border);
+
+        &__header {
+            font-size: 2.4rem;
+        }
+
+        &__container {
+            width: 100%;
+            flex-direction: column;
+            align-items: start;
+        }
+
+        &__content {
+            &:not(:first-child) {
+                margin-top: 20px;
+                margin-left: 0;
+            }
+
+            &-title {
+                font-size: 1.4rem;
+            }
+
+            &-text {
+                font-size: 1.8rem;
+            }
+        }
+        &__button {
+            margin-top: 20px;
+            margin-left: 0;
+            padding: 10px 45px;
+            width: 100%;
+        }
+    }
+}

@@ -16,6 +16,7 @@
 @use 'ui/buttons/button';
 @use 'ui/cards/business-card';
 @use 'ui/cards/floor-card';
+@use 'ui/cards/news-card';
 @use 'ui/text';
 
 // Layout
@@ -26,10 +27,6 @@
 
 // Components
 @use 'components/card-list/card-list';
-@use 'components/main-hero/main-hero';
-@use 'components/restaurant-block/restaurant-block';
-@use 'components/entertainment-block/entertainment-block';
-@use 'components/about/about';
 
 // Pages
 @use 'pages/index/index';

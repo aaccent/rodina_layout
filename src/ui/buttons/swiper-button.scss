@@ -1,0 +1,24 @@
+@use 'styles/utils';
+
+.swiper-button {
+    @include utils.circle(50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid var(--red);
+
+    &::after {
+        content: '';
+        width: 8px;
+        height: 16px;
+        display: block;
+        @include utils.bg-defaults(cover);
+        background-image: url('assets/icons/arrow.svg');
+    }
+
+    &.swiper-button-prev {
+        &::after {
+            transform: rotate(180deg);
+        }
+    }
+}

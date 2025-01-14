@@ -20,25 +20,9 @@
 
     .swiper {
         position: static;
-        &-button-prev,
-        &-button-next {
-            @include utils.bg-defaults(auto);
-            @include utils.circle(50px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: white;
-            background-image: url('assets/icons/arrow.svg');
-            border: 1.5px solid var(--red);
-
-            &::after {
-                content: none;
-            }
-        }
 
         &-button-prev {
             left: 70px;
-            transform: rotate(180deg);
         }
 
         &-button-next {

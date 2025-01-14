@@ -1,3 +1,6 @@
+@use 'node_modules/swiper/swiper';
+@use 'node_modules/swiper/modules/effect-creative';
+@use 'node_modules/swiper/modules/navigation';
 @use 'general/_preflight.css';
 @use 'general/reset';
 @use 'general/variables';
@@ -9,6 +12,7 @@
 
 // Ui
 @use 'ui/buttons/close-btn';
+@use 'ui/buttons/swiper-button';
 @use 'ui/card/card';
 @use 'ui/form/rent/rent';
 @use 'ui/form/contact/contact';

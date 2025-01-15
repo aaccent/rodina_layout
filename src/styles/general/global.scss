@@ -143,6 +143,10 @@ html.disable-scroll {
     }
 }
 
+.section-long-gradient {
+    background: linear-gradient(180deg, rgba(232, 238, 250, 0) 9.16%, #e8eefa 38.84%);
+}
+
 .page-title {
     position: relative;
     z-index: 2;

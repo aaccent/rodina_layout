@@ -3,6 +3,7 @@
 
 .entertainment-block {
     position: relative;
+    z-index: 20;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,10 +55,6 @@
             }
 
             &-slide {
-                --prevSlide-right-padding: 360px;
-                --activeSlide-right-padding: calc(var(--prevSlide-right-padding) + 178px);
-                --nextSlide-right-padding: calc(var(--activeSlide-right-padding) + 172px);
-                --lastSlide-right-padding: calc(var(--nextSlide-right-padding) + 370px);
                 position: relative;
                 transition: all 0.5s ease-out;
 
@@ -67,6 +64,10 @@
                     transform: rotate(-2deg);
                     width: 532px !important;
                     height: 570px;
+
+                    &:hover {
+                        transform: rotate(0);
+                    }
                 }
 
                 &-next + .swiper-slide,
@@ -78,7 +79,6 @@
 
                 &-active {
                     z-index: 30;
-                    right: var(--activeSlide-right-padding);
                     transform: rotate(0);
                     width: 546px !important;
                     height: 680px;
@@ -89,22 +89,30 @@
                     }
                 }
 
+                &:has(+ .swiper-slide-prev) {
+                    transform: translateX(100%);
+                    &:hover {
+                        transform: rotate(0) translateX(100%);
+                    }
+                }
+
                 &-prev {
-                    right: var(--prevSlide-right-padding);
+                    left: 161px;
                 }
 
                 &-next {
-                    right: var(--nextSlide-right-padding);
+                    right: 161px;
                 }
 
                 &-next + .swiper-slide {
-                    right: var(--lastSlide-right-padding);
-                    transform: rotate(-2deg);
+                    transform: rotate(-2deg) translateX(-100%);
+                    &:hover {
+                        transform: rotate(0) translateX(-100%);
+                    }
                 }
 
                 &:not(.swiper-slide-active):hover {
                     z-index: 40;
-                    transform: rotate(0);
                     width: 546px !important;
                     height: 680px;
                 }

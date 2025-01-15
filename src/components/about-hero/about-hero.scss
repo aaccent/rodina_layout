@@ -1,0 +1,198 @@
+@use 'styles/utils';
+@use 'node_modules/swiper/swiper';
+@use 'node_modules/swiper/modules/effect-fade';
+@use 'node_modules/swiper/modules/navigation';
+@use 'node_modules/swiper/modules/autoplay';
+@use 'node_modules/swiper/modules/pagination';
+
+.about-hero {
+    &__title {
+        font-size: 4.4rem;
+        font-weight: 800;
+        text-align: center;
+    }
+
+    &__slider {
+        margin-top: 30px;
+    }
+
+    .swiper-pagination {
+        gap: 8px;
+        position: absolute;
+        top: 525px;
+        left: 232px;
+        width: fit-content;
+        display: flex;
+
+        @media (max-width: utils.$desktop1600) {
+            position: static;
+        }
+    }
+
+    &__slide {
+        gap: 290px;
+        display: flex;
+    }
+
+    &__description {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        &-title {
+            margin-bottom: 20px;
+            font-size: 2.4rem;
+            font-weight: 800;
+            line-height: 229%;
+        }
+
+        &-text {
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 13;
+            display: -webkit-box;
+            overflow: hidden;
+            p + p {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    &__button {
+        margin-top: auto;
+        margin-bottom: 28px;
+    }
+
+    &__images-wrapper {
+        position: relative;
+        min-width: 801px;
+        max-width: 801px;
+        height: 642px;
+    }
+
+    &__image {
+        object-fit: cover;
+        object-position: center;
+        position: absolute;
+        box-sizing: content-box;
+        box-shadow: 0 0 20px 0 rgba(37, 67, 127, 0.25);
+        border-radius: 40px;
+        border: 5px solid white;
+
+        &:first-child {
+            top: 38px;
+            right: 0;
+            @include utils.square(510px);
+        }
+
+        &:nth-child(2) {
+            top: 58px;
+            left: 0;
+            @include utils.square(150px);
+        }
+
+        &:nth-child(3) {
+            top: 0;
+            right: 0;
+            @include utils.square(150px);
+        }
+
+        &:nth-child(4) {
+            bottom: 0;
+            left: 0;
+            width: 353px;
+            height: 325px;
+        }
+    }
+
+    &__red-circle {
+        @include utils.circle(100px);
+        position: absolute;
+        z-index: -10;
+        top: 24px;
+        left: 251px;
+        background-color: var(--red);
+    }
+}
+
+@media screen and (max-width: utils.$tablet1000) {
+    .about-hero {
+        &__title {
+            font-size: 2.4rem;
+        }
+        &__slider {
+            margin-top: 25px;
+        }
+
+        &__slide {
+            gap: 50px;
+            flex-direction: column-reverse;
+        }
+
+        &__images-wrapper {
+            min-width: 100%;
+            max-width: 100%;
+            height: 276px;
+        }
+
+        &__image {
+            border-radius: 10px;
+
+            &:first-child {
+                @include utils.square(220px);
+                top: 21px;
+                right: 0;
+            }
+
+            &:nth-child(2) {
+                @include utils.square(65px);
+                top: 30px;
+                left: 0;
+            }
+
+            &:nth-child(3) {
+                @include utils.square(65px);
+                top: 0;
+                right: 0;
+            }
+
+            &:nth-child(4) {
+                bottom: 0;
+                left: 0;
+                width: 152px;
+                height: 140px;
+            }
+        }
+
+        &__red-circle {
+            @include utils.circle(70px);
+            top: 0;
+            left: 97px;
+        }
+
+        &__description {
+            &-title {
+                margin-bottom: 10px;
+                font-size: 1.8rem;
+                line-height: normal;
+            }
+
+            &-text {
+                -webkit-line-clamp: inherit;
+                font-size: 1.6rem;
+            }
+        }
+
+        &__button {
+            margin-top: 55px;
+            margin-bottom: 0;
+        }
+
+        .swiper-pagination {
+            position: absolute;
+            top: auto;
+            bottom: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}

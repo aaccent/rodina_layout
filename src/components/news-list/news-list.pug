@@ -1,0 +1,36 @@
+include layout/utils
+include ui/cards/news-entertainment/card
+
+-
+    var news = [
+        {
+            image: 'assets/content/news/1.png',
+            title: 'StopStandup шоу-программа, 18-19 марта',
+            floor: '2 этаж',
+            date: '21.10.2022'
+        },
+        {
+            image: 'assets/content/news/2.png',
+            title: 'Новое меню в Гриль-баре «Шашлыкофф» ',
+            floor: '1 этаж',
+            date: '21.10.2022'
+        },
+        {
+            image: 'assets/content/news/1.png',
+            title: 'StopStandup шоу-программа, 18-19 марта',
+            floor: '2 этаж',
+            date: '21.10.2022'
+        },
+        {
+            image: 'assets/content/news/2.png',
+            title: 'Новое меню в Гриль-баре «Шашлыкофф» ',
+            floor: '1 этаж',
+            date: '21.10.2022'
+        }
+    ]
+
++section.section.news
+    h1.news__title.section-title Новости и акции
+    .news__list
+        each item in news
+            +card({ type: 'news', item })

@@ -1,0 +1,185 @@
+@use 'styles/utils';
+
+.socials {
+    margin-top: 0;
+
+    .container {
+        width: 1600px;
+    }
+
+    &__images {
+        position: relative;
+        margin-top: 88px;
+        height: 510px;
+
+        &-item {
+            object-fit: cover;
+            object-position: center;
+            position: absolute;
+            box-shadow: 0 0 20px 0 rgba(37, 67, 127, 0.25);
+            border-radius: 40px;
+            border: 5px solid white;
+
+            &:first-child {
+                @include utils.square(150px);
+                top: 0;
+                left: 0;
+            }
+
+            &:nth-child(2) {
+                top: 92px;
+                left: 200px;
+                width: 353px;
+                height: 325px;
+            }
+
+            &:nth-child(3) {
+                @include utils.square(510px);
+                top: 0;
+                left: 52%;
+                transform: translateX(-50%);
+            }
+
+            &:nth-child(4) {
+                z-index: 10;
+                @include utils.square(150px);
+                right: 440px;
+                bottom: 51px;
+            }
+
+            &:nth-child(5) {
+                top: 0;
+                right: 0;
+                width: 353px;
+                height: 325px;
+            }
+        }
+    }
+
+    &__list {
+        gap: 18px;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-item {
+            gap: 11px;
+            display: flex;
+            justify-content: center;
+
+            &:nth-child(odd) {
+                .socials__list-item-name {
+                    border: 2px solid var(--red);
+                }
+            }
+            &:nth-child(even) {
+                .socials__list-item-name {
+                    border: 2px solid hsl(220, 64%, 59%);
+                }
+            }
+
+            &-name {
+                padding: 15px 0;
+                width: 432px;
+                max-width: 432px;
+                font-size: 1.6rem;
+                font-weight: 800;
+                text-align: center;
+                border-radius: 15px;
+            }
+
+            &-icon {
+                @include utils.square(55px);
+                object-position: center;
+                object-fit: cover;
+                border-radius: 13px;
+            }
+        }
+    }
+
+    .circle {
+        position: absolute;
+        z-index: -10;
+        background-color: var(--circle-gray);
+
+        &:first-of-type {
+            @include utils.circle(150px);
+            bottom: 29px;
+            left: 140px;
+        }
+
+        &:last-of-type {
+            @include utils.circle(100px);
+            right: 252px;
+            bottom: -146px;
+        }
+    }
+}
+
+@media screen and (max-width: utils.$tablet1000) {
+    .socials {
+        &__images {
+            margin-top: 46px;
+            height: 346px;
+
+            &-item {
+                border-radius: 15px;
+
+                &:first-child {
+                    @include utils.square(67px);
+                    z-index: 20;
+                    top: 4px;
+                }
+
+                &:nth-child(2) {
+                    z-index: 20;
+                    top: auto;
+                    bottom: 0;
+                    left: 0;
+                    width: 140px;
+                    height: 129px;
+                }
+
+                &:nth-child(3) {
+                    @include utils.square(268px);
+                    z-index: 10;
+                    top: 17px;
+                    left: 30px;
+                    transform: translate(0);
+                }
+
+                &:nth-child(4) {
+                    @include utils.square(68px);
+                    z-index: 0;
+                    top: 0;
+                    right: 0;
+                    bottom: auto;
+                }
+
+                &:nth-child(5) {
+                    top: auto;
+                    right: 0;
+                    bottom: 0;
+                    width: 131px;
+                    height: 131px;
+                }
+            }
+        }
+
+        &__list {
+            margin-top: 50px;
+
+            &-item {
+                width: 100%;
+                &-name {
+                    width: 100%;
+                }
+            }
+        }
+
+        .circle {
+            display: none;
+        }
+    }
+}

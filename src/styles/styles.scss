@@ -10,6 +10,7 @@
 // Ui
 @use 'ui/buttons/close-btn';
 @use 'ui/cards/news-entertainment/card';
+@use 'ui/card/card';
 @use 'ui/form/rent/rent';
 @use 'ui/form/contact/contact';
 @use 'ui/input/input';
@@ -30,6 +31,8 @@
 @use 'components/restaurant-block/restaurant-block';
 @use 'components/entertainment-block/entertainment-block';
 @use 'components/about/about';
+@use 'components/shops-block/shops-block';
+@use 'components/about-hero/about-hero';
 @use 'components/news-list/news-list';
 
 // Pages

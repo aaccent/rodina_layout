@@ -1,0 +1,22 @@
+extends layout/page
+include layout/utils
+
+block prepend head
+    - title = 'Главная'
+
+block append main
+    +section.section-wrapper__gradient.news-item
+        h1.section-title.news-item__title Standup шоу-программа 18-19 марта
+        .news-item__container
+            .news-item__image-block
+                +img(require('assets/content/entertainment2.png')).news-item__image
+                .news-item__name StopStandup шоу-программа, 18-19 марта
+            .news-item__description
+                .news-item__description-title Приходите на выступление!
+                .news-item__description-text!= '<p>Уникальное шоу с легендарными хитами-выступлениями Сергея Старовойтова в мощнейшем союзе c Антоном Белым!</p><p>Классика стэндапа, энергия и утонченность сливаются в единое целое, представая перед слушателями в своей неповторимой манере!</p>'
+                .news-item__date 21.10.2022
+            +anchor.news-item__button._mobile.button Купить билеты
+        +anchor.news-item__button.button Купить билеты
+        .circle._red
+        .circle._gray
+        .circle._blue

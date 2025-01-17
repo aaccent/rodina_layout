@@ -114,6 +114,10 @@ html.disable-scroll {
     box-sizing: border-box !important;
 }
 
+p + p {
+    margin-top: 15px;
+}
+
 .content {
     p + p {
         margin-top: 15px;
@@ -122,23 +126,6 @@ html.disable-scroll {
     @media only screen and (max-width: utils.$tablet1000) {
         p + p {
             margin-top: 19px;
-        }
-    }
-}
-
-.section-wrapper__gradient {
-    padding-bottom: 80px;
-    background: linear-gradient(180deg, #e8eefa 0%, rgba(232, 238, 250, 0) 56.91%);
-    //background: linear-gradient(180deg, rgba(232, 238, 250, 0) 0%, #e8eefa 56.91%);
-
-    &:first-child {
-        padding-top: 80px;
-    }
-
-    @media only screen and (max-width: utils.$tablet1000) {
-        padding-bottom: 30px;
-        &:first-child {
-            padding-top: 30px;
         }
     }
 }

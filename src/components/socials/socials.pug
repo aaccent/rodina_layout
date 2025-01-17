@@ -1,0 +1,18 @@
+include layout/utils
+-
+    var images =['assets/content/socials/1.jpg','assets/content/socials/2.jpg','assets/content/socials/3.jpg','assets/content/socials/4.jpg','assets/content/socials/5.png',]
+
++section.socials
+    .page-title.socials__title Соц сети
+    .socials__images
+        each item in images
+            +img(require(item)).socials__images-item
+        .circle
+        .circle
+    .socials__list
+        +anchor.socials__list-item
+            +img(require('assets/icons/instagram.svg')).socials__list-item-icon
+            .socials__list-item-name Перейти в инстаграм
+        +anchor.socials__list-item
+            +img(require('assets/icons/vk.svg')).socials__list-item-icon
+            .socials__list-item-name Перейти во ВКонтакте

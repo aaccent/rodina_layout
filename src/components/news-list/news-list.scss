@@ -1,0 +1,61 @@
+@use 'styles/utils';
+
+.news {
+    margin-top: 80px;
+
+    &__title {
+        margin-bottom: 60px;
+        text-align: center;
+    }
+    &__list {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 35px;
+        row-gap: 50px;
+        display: grid;
+
+        .card {
+            gap: 20px;
+
+            &-container {
+                gap: 20px;
+                padding: 46px 46px 37px;
+                box-shadow: 0 0 20px 0 rgba(37, 67, 127, 0.25);
+            }
+
+            &-image {
+                width: 100%;
+                max-width: 418px;
+                height: 277px;
+                border-radius: 25px;
+            }
+
+            &-info {
+                text-align: end;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: utils.$tablet1000) {
+    .news {
+        margin-top: 30px;
+
+        &__title {
+            margin-bottom: 20px;
+        }
+
+        &__list {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .card {
+            gap: 15px;
+            padding: 0;
+
+            &-container {
+                padding: 20px;
+                border-radius: 15px;
+            }
+        }
+    }
+}

@@ -3,6 +3,7 @@ const autoScales = require('./postcss/auto-scales.cjs')
 module.exports = {
     plugins: [
         autoScales({
+            fontSizeMod: 10,
             dodgeSelectors: [
                 { type: 'startsWith', value: '.swiper' },
                 {

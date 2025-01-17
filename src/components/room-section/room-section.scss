@@ -1,0 +1,309 @@
+@use 'styles/utils';
+
+.room-section {
+    --wall-thickness: 24px;
+    --wall-color: #cfd6e3;
+
+    &__wall {
+        width: 100%;
+        height: var(--wall-thickness);
+        background-color: var(--wall-color);
+    }
+
+    &__door {
+        width: 100%;
+        height: 6px;
+        background-color: var(--wall-color);
+    }
+
+    .container {
+        position: relative;
+        border-width: 0 var(--wall-thickness);
+        border-color: var(--wall-color);
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 4;
+            top: 0;
+            width: calc((100vw - 100%));
+            height: calc(100% + var(--wall-thickness) / 2);
+            background: linear-gradient(90deg, rgba(232, 238, 250, 0) 0%, #e8eefa 87.68%);
+        }
+
+        &::before {
+            right: calc(100% - 60px);
+            scale: -1;
+        }
+
+        &::after {
+            left: calc(100% - 60px);
+        }
+    }
+
+    &__left-walls,
+    &__right-walls {
+        position: absolute;
+        top: 0;
+        width: calc((100vw - 100%) / 2);
+        height: calc(100% + var(--wall-thickness) / 2);
+        border-width: var(--wall-thickness) 0;
+        border-color: var(--wall-color);
+    }
+
+    &__left-walls {
+        right: calc(100%);
+    }
+
+    &__right-walls {
+        left: calc(100%);
+    }
+
+    &__top-wall {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &__content {
+        display: flex;
+    }
+
+    &__big-room {
+        gap: 35px;
+        --padding: 80px;
+        padding: calc(var(--padding) + var(--wall-thickness));
+        display: flex;
+    }
+
+    &__title {
+        flex-shrink: 0;
+    }
+
+    &__content-block {
+        gap: 35px;
+        width: 100%;
+        max-width: 460px;
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+    }
+
+    &__content-links {
+        gap: 35px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__link {
+        text-underline-offset: 2px;
+        color: #e4122b;
+        font-size: 1.6rem;
+        font-weight: 800;
+        line-height: 2.5rem;
+        text-decoration: underline;
+    }
+
+    &__small-room {
+        padding: 70px;
+        width: 100%;
+        display: flex;
+        flex-shrink: 0;
+        justify-content: center;
+        align-items: center;
+        border-color: var(--wall-color);
+        border-left-width: var(--wall-thickness);
+    }
+
+    &__price-info {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        align-items: center;
+        color: #e4122b;
+        font-weight: 800;
+
+        span:nth-child(1) {
+            font-size: 4.4rem;
+            line-height: 5.5rem;
+        }
+
+        span:nth-child(2) {
+            font-size: 2.4rem;
+            line-height: 3.5rem;
+        }
+    }
+
+    &__bottom-wall {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+
+        .room-section__wall {
+            position: relative;
+            z-index: 1;
+            translate: 0 calc(var(--wall-thickness) / 2);
+            align-self: end;
+
+            &:nth-child(1) {
+                width: 370px;
+                flex-shrink: 0;
+            }
+
+            &:nth-child(3) {
+                width: 245px;
+                flex-shrink: 0;
+            }
+
+            &:nth-child(5) {
+                width: 219px;
+                flex-shrink: 0;
+            }
+        }
+
+        .room-section__door {
+            translate: 0 3px;
+            width: 180px;
+            flex-shrink: 0;
+            align-self: end;
+
+            &:nth-child(7) {
+                transform: scaleX(1.1);
+                width: 155px;
+            }
+        }
+    }
+
+    &__door-with-animation {
+        position: relative;
+        width: 138px;
+        flex-shrink: 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            top: -3px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #e8eefa;
+        }
+
+        img {
+            transform: translateY(4px) translateX(-5px);
+            transform-origin: bottom left;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: contain;
+            transition: transform cubic-bezier(0.23, 0.72, 0.2, 1.17) 1.5s;
+        }
+
+        &.animation img {
+            transform: translateY(-4px) translateX(-13px) rotate(36deg);
+        }
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .room-section {
+        --wall-thickness: 10px;
+
+        &__door {
+            height: 2px;
+        }
+
+        .container {
+            border: 0;
+
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+
+        &__content {
+            gap: 30px;
+            flex-direction: column;
+        }
+
+        &__top-wall {
+            display: none;
+        }
+
+        &__left-walls,
+        &__right-walls {
+        }
+
+        &__big-room {
+            gap: 10px;
+            padding: 0;
+            flex-direction: column;
+        }
+
+        &__title {
+            line-height: 3.3rem;
+        }
+
+        &__content-block {
+            gap: 20px;
+        }
+
+        &__content-links {
+            gap: 15px;
+            justify-content: space-between;
+
+            .button {
+                padding: 10px 20px;
+                width: fit-content;
+            }
+        }
+
+        &__link {
+            flex-shrink: 0;
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 2.2rem;
+            text-decoration: none;
+        }
+
+        &__small-room-wrapper {
+            position: relative;
+        }
+
+        &__small-room {
+            padding: 30px 40px;
+            border-width: var(--wall-thickness) 6px 0;
+        }
+
+        &__bottom-wall {
+            .room-section__wall {
+                translate: 0 calc(var(--wall-thickness) / 2 + 1px);
+
+                &:nth-child(1) {
+                    width: 100px;
+                }
+
+                &:nth-child(3) {
+                    width: 65px;
+                }
+            }
+
+            .room-section__door {
+                translate: 0 2px;
+
+                &:nth-child(2) {
+                    width: 45px;
+                }
+
+                &:nth-child(4) {
+                    width: 48px;
+                }
+            }
+        }
+    }
+}

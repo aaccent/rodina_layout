@@ -15,9 +15,11 @@ void (function () {
 
         breakpoints: {
             1000: {
-                slidesPerView: 5,
+                slidesPerView: 'auto',
                 initialSlide: 2,
                 centeredSlides: true,
+                loopAdditionalSlides: 1,
+                allowTouchMove: false,
             },
         },
     })

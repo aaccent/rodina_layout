@@ -115,11 +115,24 @@ html.disable-scroll {
 }
 
 .content {
+    h2 {
+        margin-bottom: 20px;
+        font-family: var(--nunito);
+        font-size: 4.4rem;
+        font-weight: 800;
+        line-height: 5.5rem;
+    }
+
     p + p {
         margin-top: 15px;
     }
 
     @media only screen and (max-width: utils.$tablet1000) {
+        h2 {
+            margin-bottom: 10px;
+            font-size: 2.4rem;
+        }
+
         p + p {
             margin-top: 19px;
         }

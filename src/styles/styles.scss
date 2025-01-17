@@ -1,3 +1,6 @@
+@use 'node_modules/swiper/swiper';
+@use 'node_modules/swiper/modules/effect-creative';
+@use 'node_modules/swiper/modules/navigation';
 @use 'general/_preflight.css';
 @use 'general/reset';
 @use 'general/variables';
@@ -10,13 +13,16 @@
 // Ui
 @use 'ui/buttons/close-btn';
 @use 'ui/cards/news-entertainment/card';
+@use 'ui/buttons/swiper-button';
 @use 'ui/form/rent/rent';
 @use 'ui/form/contact/contact';
 @use 'ui/input/input';
 @use 'ui/buttons/button';
 @use 'ui/cards/business-card';
 @use 'ui/cards/floor-card';
+@use 'ui/cards/news-card';
 @use 'ui/text';
+@use 'ui/filed-input';
 
 // Layout
 @use 'layout/header/header';
@@ -26,10 +32,7 @@
 
 // Components
 @use 'components/card-list/card-list';
-@use 'components/main-hero/main-hero';
-@use 'components/restaurant-block/restaurant-block';
-@use 'components/entertainment-block/entertainment-block';
-@use 'components/about/about';
+@use 'components/seo-section/seo-section';
 @use 'components/socials/socials';
 @use 'components/shops-block/shops-block';
 @use 'components/about-hero/about-hero';

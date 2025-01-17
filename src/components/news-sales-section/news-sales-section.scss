@@ -1,0 +1,181 @@
+@use 'styles/utils';
+
+.news-sales-section {
+    padding-top: 100px;
+
+    &__title {
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    &__swiper-container {
+        position: relative;
+    }
+
+    .swiper {
+        z-index: 1;
+    }
+
+    &__buttons {
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+        width: 100%;
+    }
+
+    .swiper-button {
+        position: absolute;
+
+        &-prev {
+            right: calc(100% + 40px);
+            left: initial;
+        }
+
+        &-next {
+            right: initial;
+            left: calc(100% + 40px);
+        }
+    }
+
+    &__form-wrapper {
+        gap: 42px;
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__form-title {
+        flex-shrink: 0;
+        font-size: 2.4rem;
+        font-weight: 800;
+        line-height: 3.5rem;
+    }
+
+    &__form {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        .filed-input {
+            margin-right: 30px;
+            width: 100%;
+            max-width: 420px;
+        }
+    }
+
+    &__form-privacy {
+        margin-left: 11px;
+        flex-shrink: 0;
+        color: #8f9fbd;
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+}
+
+@media only screen and (max-width: utils.$tablet1000) {
+    .news-sales-section {
+        margin-top: 0;
+        padding-top: 25px;
+
+        &__title {
+            margin-bottom: 20px;
+        }
+
+        &__buttons {
+            gap: 15px;
+            position: static;
+            translate: initial;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .swiper-button {
+                gap: 5px;
+                position: static;
+                padding: 0 25px;
+                width: 100%;
+                display: flex;
+                border-radius: 50px;
+
+                &::before {
+                    color: #202020;
+                    font-size: 1.6rem;
+                    font-weight: 800;
+                    line-height: 2.2rem;
+                }
+
+                &::after {
+                    width: 10px;
+                    height: 10px;
+                    background-position: center;
+                    background-size: contain;
+                }
+
+                &-prev {
+                    &::before {
+                        content: 'Назад';
+                    }
+
+                    &::after {
+                        order: -1;
+                    }
+                }
+
+                &-next {
+                    &::before {
+                        content: 'Далее';
+                    }
+                }
+
+                &-disabled {
+                    opacity: 1;
+                    border-color: #9b9cad;
+
+                    &::before {
+                        color: #9b9cad;
+                    }
+
+                    &::after {
+                        filter: brightness(0) saturate(100%) invert(66%) sepia(2%) saturate(2247%) hue-rotate(199deg)
+                            brightness(96%) contrast(87%);
+                    }
+                }
+            }
+        }
+
+        &__form-wrapper {
+            gap: 20px;
+            flex-direction: column;
+            align-items: initial;
+        }
+
+        &__form {
+            flex-direction: column;
+            align-items: initial;
+
+            .filed-input {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        &__form-privacy {
+            margin-top: 10px;
+            margin-left: 0;
+
+            a {
+                text-decoration-color: rgba(143, 159, 189, 0.5);
+                text-underline-offset: 2px;
+                text-decoration: underline;
+            }
+        }
+
+        &__form-title {
+            max-width: 260px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            line-height: 2.5rem;
+        }
+    }
+}

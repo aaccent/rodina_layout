@@ -4,8 +4,9 @@
 @use 'node_modules/swiper/modules/navigation';
 
 .restaurant-block {
+    padding-top: 50px;
+
     .container {
-        width: 1600px;
         display: flex;
     }
 
@@ -39,24 +40,10 @@
 
         .swiper-button-prev,
         .swiper-button-next {
-            @include utils.circle(50px);
             top: 525px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1.5px solid var(--red);
 
             p {
                 display: none;
-            }
-
-            &::after {
-                content: '';
-                width: 8px;
-                height: 16px;
-                display: block;
-                @include utils.bg-defaults(cover);
-                background-image: url('assets/icons/arrow.svg');
             }
         }
 
@@ -67,10 +54,6 @@
         .swiper-button-prev {
             right: 482px;
             left: auto;
-
-            &::after {
-                transform: rotate(180deg);
-            }
         }
     }
 

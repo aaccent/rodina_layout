@@ -1,0 +1,45 @@
+include layout/utils
+
+-
+    var slides = [
+        {
+            img: require('assets/content/news-sales/slide-2.jpg'),
+            title: 'StopStandup шоу-программа, 18-19 марта',
+        },
+        {
+            img: require('assets/content/news-sales/slide-3.jpg'),
+            title: 'Новое меню в Гриль-баре «Шашлыкофф»',
+        },
+        {
+            img: require('assets/content/news-sales/slide-1.jpg'),
+            title: 'Новая коллекция одежды и обуви Peserico',
+        },
+        {
+            img: require('assets/content/news-sales/slide-2.jpg'),
+            title: 'Новое меню в Гриль-баре «Шашлыкофф»',
+        },
+    ]
+
+.news-sales-section.section: .container
+    h2.section-title.news-sales-section__title Новости и акции
+    .news-sales-section__swiper-container
+        .swiper: ul.swiper-wrapper
+            each slide in slides
+                li.swiper-slide: +anchor('#').news-card
+                    +img(slide.img).news-card__img
+                    .news-card__title= slide.title
+                    .news-card__bottom
+                        .news-card__link-text Подробнее
+                        .news-card__date 21.10.2022
+        .swiper-buttons.news-sales-section__buttons
+            +wrapBreak: button.swiper-button-prev.swiper-button(type='button')
+            +wrapBreak: button.swiper-button-next.swiper-button(type='button')
+    .news-sales-section__form-wrapper
+        .news-sales-section__form-title Узнавайте о свежих новостях и акциях первыми!
+        form.news-sales-section__form
+            +wrapBreak: input.filed-input(required, placeholder='Ваш E-mail', type='email')
+            +wrapBreak: button.button(type='submit') Отправить
+            .news-sales-section__form-privacy
+                | Нажимая на кнопку «Отправить» вы соглашаетесь
+                br
+                a(href='#') на обработку персональных данных

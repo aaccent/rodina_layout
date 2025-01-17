@@ -42,8 +42,7 @@ export default async function () {
         },
         devtool: 'source-map',
         devServer: {
-            port: 3061,
-            watchFiles: ['src/**/*.*'],
+            port: 3062,
             static: {
                 directory: PATHS.SRC._,
             },

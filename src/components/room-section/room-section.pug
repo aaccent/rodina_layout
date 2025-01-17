@@ -1,0 +1,32 @@
+include layout/utils
+
+.room-section.section: .container
+    .room-section__top-wall.room-section__wall
+    .room-section__content
+        .room-section__big-room
+            h2.room-section__title.section-title Помещения с готовой#[br]отделкой в самом#[br]центре Казани
+            .room-section__content-block
+                .room-section__text.content: p
+                    | Первый и второй этажи занимает торговая галерея,
+                    | представленная мировыми брендами: одежда, обувь,
+                    | бытовая техника и электроника, спортивные товары,
+                    | товары для детей и многое другое.
+                .room-section__content-links
+                    +anchor.button Узнать подробнее
+                    +anchor.room-section__link Схема этажей
+        .room-section__small-room-wrapper: .room-section__small-room
+            .room-section__left-walls
+            .room-section__right-walls
+            .room-section__price-info
+                span От 800 руб
+                span за квадратный метр
+    .room-section__bottom-wall
+        .room-section__wall
+        .room-section__door
+        .room-section__wall
+        .room-section__door
+        .room-section__wall
+        .room-section__door-with-animation
+            +img(require('assets/static/door-with-bg.svg'))
+        .room-section__door
+        .room-section__wall

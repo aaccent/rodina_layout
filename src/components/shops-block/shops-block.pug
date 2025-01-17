@@ -1,0 +1,44 @@
+include layout/utils
+
+-
+    var shops =[
+        {
+            title: 'Магазин одежды',
+            image: 'assets/content/shops/1.png'
+        },{
+            title: 'Магазин продуктов',
+            image: 'assets/content/shops/2.png'
+        },{
+            title: 'Магазин сигар',
+            image: 'assets/content/shops/3.png'
+        },{
+            title: 'Магазин сыра',
+            image: 'assets/content/shops/4.png'
+        }, {
+            title: 'Магазин сигар',
+            image: 'assets/content/shops/3.png'
+        }, {
+            title: 'Магазин сыра',
+            image: 'assets/content/shops/4.png'
+        },
+    ]
+
++section.shops-block
+    .shops-block__slider
+        each item, index in shops
+            if index !== 0
+                .shops-block__slide
+                    +img(require(item.image)).shops-block__slide-image
+                    .shops-block__slide-title
+            else
+                .shops-block__slide._active
+                    +img(require(item.image)).shops-block__slide-image
+                    .shops-block__slide-title= item.title
+        .shops-block__navigation
+            button.shops-block__navigation-prev
+            button.shops-block__navigation-next
+    .shops-block__info
+        h2.shops-block__title Магазины
+        .shops-block__subtitle Загляните на шопинг
+        .shops-block__description Первый и второй этажи занимает торговая галерея, представленная мировыми брендами: одежда, обувь, бытовая техника и электроника, спортивные товары, товары для детей и многое другое. Удобные информационные стенды на этажах помогают сориентироваться и найти нужный бутик или магазин, даже если вы пришли к нам в первый раз.
+        .shops-block__button.button: +anchor('/shops.html') Полный список магазинов

@@ -4,14 +4,19 @@
     padding-bottom: 170px;
     .container:has(.map) {
         height: 641px;
+
+        @media screen and (max-width: utils.$tablet1000) {
+            height: fit-content;
+        }
     }
 
     &-container {
         position: absolute;
         z-index: 10;
-        top: 143px;
+        bottom: -40px;
         left: 160px;
-        padding: 50px;
+        padding: 50px 0 50px 50px;
+        width: 632px;
         overflow: hidden;
         box-shadow: 0 0 20px 0 rgba(37, 67, 127, 0.25);
         background-color: white;
@@ -93,12 +98,18 @@
 
 @media only screen and (max-width: utils.$tablet1000) {
     .contacts {
+        padding-bottom: 50px;
         &-container {
-            top: 250px;
-            left: 50%;
-            transform: translateX(-50%);
+            position: relative;
+            z-index: 10;
+            top: auto;
+            bottom: auto;
+            left: auto;
+            transform: translate(0);
+            margin: -60px auto 0;
             padding: 20px 20px 67px;
             width: 345px;
+            height: fit-content;
             box-shadow: none;
             border-radius: 15px;
             border: 1px solid var(--border);

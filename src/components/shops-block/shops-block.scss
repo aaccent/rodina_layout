@@ -5,6 +5,7 @@
     .container {
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 
     &__info {
@@ -26,117 +27,104 @@
         margin-bottom: 40px;
     }
 
-    /*.swiper {
-        &-slide {
-            position: absolute;
-            transition: all ease-in-out 300ms;
-            &-next {
-                right: 168px;
-                bottom: 37px;
-                display: block;
-
-                & + .swiper-slide {
-                    right: 0;
-                    bottom: 50%;
-                    transform: translateY(50%);
-                    display: block;
-
-                    & + .swiper-slide {
-                        top: 0;
-                        right: 168px;
-                        display: block;
-                    }
-                }
-            }
-
-            &-active {
-                position: static;
-                margin-top: 11px;
-                margin-left: 87px;
-                width: 545px !important;
-                height: 666px;
-                display: block;
-
-                .shops-block__slide-image {
-                    width: 100%;
-                    height: 100%;
-                    &-wrapper {
-                        width: 453px;
-                        height: 613px;
-                        &::before {
-                            @include utils.circle(545px);
-                            background-color: var(--red);
-                        }
-                    }
-                }
-            }
-        }
-    }*/
-
     &__slider {
         position: relative;
         width: 970px;
+        height: 677px;
+
+        &-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
     }
 
     &__slide {
+        @include utils.square(200px);
         position: absolute;
-        @include utils.circle(140px);
-        display: none;
+        top: 0;
+        left: 50%;
+        translate: -50% 0;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: hsla(7, 85%, 48%, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: all linear 500ms;
+
+        &::after {
+            content: '';
+            @include utils.circle(140px);
+            position: absolute;
+            z-index: -10;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            opacity: 0.5;
+            background-color: var(--red);
+            transition: all linear 500ms;
+        }
 
         &-image {
-            @include utils.square(100%);
             object-position: center;
             object-fit: cover;
+            width: 100%;
+            max-width: 120px;
+            height: 120px;
+            transition: all linear 500ms;
         }
 
         &-title {
             margin-top: 18px;
+            display: none;
             font-size: 3.5rem;
             font-weight: 800;
         }
 
         &._active {
-            position: relative;
-            margin-left: 87px;
+            top: 0;
+            left: 86px;
+            translate: 0;
             width: 545px;
             height: 666px;
-            display: flex;
-            flex-direction: column;
-            background-color: transparent;
+            opacity: 1;
+            visibility: visible;
 
             &::after {
-                content: '';
-                @include utils.circle(545px);
-                position: absolute;
-                z-index: -10;
-                background-color: var(--red);
-            }
-
-            & + .shops-block__slide {
-                right: 198px;
-                bottom: 37px;
-                display: block;
-
-                & + .shops-block__slide {
-                    right: 30px;
-                    bottom: 50%;
-                    transform: translateY(50%);
-                    display: block;
-
-                    & + .shops-block__slide {
-                        top: 30px;
-                        right: 198px;
-                        display: block;
-                    }
-                }
+                scale: 3.9;
+                opacity: 1;
             }
 
             .shops-block__slide-image {
-                width: 453px;
+                max-width: 453px;
                 height: 613px;
+            }
+            & + .shops-block__slide {
+                top: 100%;
+                left: 100%;
+                translate: calc(var(--size) * -1 - 168px) -100%;
+                opacity: 1;
+                visibility: visible;
+
+                & + .shops-block__slide {
+                    top: 50%;
+                    left: 100%;
+                    translate: -100% -50%;
+                    opacity: 1;
+                    visibility: visible;
+
+                    & + .shops-block__slide {
+                        top: 0;
+                        left: 100%;
+                        translate: calc(var(--size) * -1 - 168px) 0;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+            .shops-block__slide-title {
+                display: block;
             }
         }
     }
@@ -168,11 +156,11 @@
         }
 
         &-prev {
-            transform: rotate(-90deg);
+            transform: rotate(90deg);
         }
 
         &-next {
-            transform: rotate(90deg);
+            transform: rotate(-90deg);
         }
     }
 }
@@ -183,52 +171,58 @@
         border-top: 1px solid var(--border);
 
         .container {
+            padding-top: 50px;
             flex-direction: column;
         }
 
         &__slider {
-            padding-bottom: 120px;
             width: 100%;
+            height: 550px;
         }
 
         &__slide {
             @include utils.square(63px);
+            top: 66px;
+            left: 100%;
+            translate: -100% 0;
+
+            &::after {
+                @include utils.circle(63px);
+            }
+
             &._active {
-                margin: 154px auto 0;
+                top: 83px;
+                left: 50%;
+                translate: -50% 0;
                 width: 245px;
-                height: fit-content;
-                justify-content: start;
-
-                .shops-block__slide-title {
-                    margin-top: 10px;
-                    font-size: 1.8rem;
-                }
-
-                &::after {
-                    @include utils.circle(245px);
-                }
+                height: 310px;
 
                 .shops-block__slide-image {
-                    margin-top: -16px;
-                    width: 204px;
+                    max-width: 204px;
                     height: 275px;
                 }
 
                 & + .shops-block__slide {
-                    top: 109px;
+                    top: 83px;
                     left: 0;
+                    translate: 0;
 
                     & + .shops-block__slide {
-                        top: 50px;
+                        top: 0;
                         left: 50%;
-                        transform: translateX(-50%);
+                        translate: -50% 0;
 
                         & + .shops-block__slide {
-                            top: 109px;
-                            right: 0;
+                            top: 83px;
+                            left: 100%;
+                            translate: -100% 0;
                         }
                     }
                 }
+            }
+
+            &-title {
+                font-size: 1.8rem;
             }
         }
 

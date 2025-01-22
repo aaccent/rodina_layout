@@ -12,31 +12,30 @@ include layout/utils
             title: 'Магазин сигар',
             image: 'assets/content/shops/3.png'
         },{
-            title: 'Магазин сыра',
-            image: 'assets/content/shops/4.png'
-        }, {
             title: 'Магазин сигар',
             image: 'assets/content/shops/3.png'
         }, {
             title: 'Магазин сыра',
             image: 'assets/content/shops/4.png'
-        },
+        }, {
+            title: 'Магазин сыра',
+            image: 'assets/content/shops/4.png'
+        }, {
+            title: 'Магазин сыра',
+            image: 'assets/content/shops/4.png'
+        }
     ]
 
 +section.shops-block
     .shops-block__slider
-        each item, index in shops
-            if index !== 0
+        .shops-block__slider-inner
+            each item, index in shops
                 .shops-block__slide
-                    +img(require(item.image)).shops-block__slide-image
-                    .shops-block__slide-title
-            else
-                .shops-block__slide._active
                     +img(require(item.image)).shops-block__slide-image
                     .shops-block__slide-title= item.title
         .shops-block__navigation
-            button.shops-block__navigation-prev
             button.shops-block__navigation-next
+            button.shops-block__navigation-prev
     .shops-block__info
         h2.shops-block__title Магазины
         .shops-block__subtitle Загляните на шопинг

@@ -63,18 +63,22 @@
         align-items: center;
     }
 
-    &__search-button {
+    &__search {
         gap: 11px;
         display: flex;
         align-items: center;
-        font-size: 1.8rem;
-        font-weight: 800;
         opacity: 0.35;
 
-        &::after {
+        &-input {
+            padding: 8px 12px;
+            width: 200px;
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        &-button {
             @include utils.square(17px);
             @include utils.bg-defaults(cover);
-            content: '';
             background-image: url('assets/icons/search.svg');
         }
     }

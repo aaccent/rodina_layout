@@ -1,5 +1,5 @@
 @use 'styles/utils';
-@use 'node_modules/swiper/swiper.scss';
+@use 'node_modules/swiper/swiper.css';
 @use 'node_modules/swiper/modules/effect-fade';
 @use 'node_modules/swiper/modules/autoplay';
 
@@ -20,6 +20,7 @@
 
             &__inner {
                 position: relative;
+                top: -122.5px;
             }
         }
 

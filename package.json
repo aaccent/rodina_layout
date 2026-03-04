@@ -39,12 +39,12 @@
     "sass-loader": "^14.2.1",
     "sharp": "^0.33.5",
     "simple-git": "^3.27.0",
-    "swiper": "^11.1.15",
+    "swiper": "12.1.2",
     "ts-loader": "^9.5.1",
     "typescript": "^5.7.2",
-    "webpack": "^5.91.0",
+    "webpack": "5.104.1",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.4"
+    "webpack-dev-server": "5.2.1"
   },
   "engines": {
     "node": ">=17"

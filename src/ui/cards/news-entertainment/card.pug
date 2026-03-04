@@ -12,7 +12,7 @@ mixin card(props)
                 date: ''
             }
         }, props || {})
-    .card
+    +anchor.card
         .card-container
             if props.type === 'entertainment' && props.item.icon
                 .card-container__image
@@ -25,4 +25,4 @@ mixin card(props)
                 .card-info= props.type === 'entertainment' ? props.item.floor : props.item.date
         if props.type=== 'news'
             .card__floor= props.item.floor
-        +anchor.button Подробнее
+        .button Подробнее

@@ -15,12 +15,13 @@
         box-shadow: 0 0 20px 0 rgba(37, 67, 127, 0.25);
         background-color: white;
         border-radius: 50px;
+        transition: all 300ms linear;
 
         &__image {
             position: relative;
             width: 100%;
             height: 242px;
-            overflow: hidden;
+            transition: all 300ms linear;
         }
     }
 
@@ -68,6 +69,38 @@
         text-align: center;
         border-radius: 15px;
         border: 2px solid var(--red);
+        transition: all 300ms linear;
+    }
+
+    &:hover {
+        .card-container {
+            inset: 0;
+            position: absolute;
+            transition: all 300ms linear;
+        }
+
+        .button {
+            position: absolute;
+            right: 30px;
+            bottom: 0;
+            transform: translateY(-26px);
+            color: white;
+            background-color: var(--red);
+            transition: all 300ms linear;
+        }
+
+        .card-container__image {
+            scale: 1.2;
+            transition: all 300ms linear;
+        }
+
+        .card-icon {
+            inset: unset;
+            top: 0;
+            right: 0;
+            transform: translate(0, -50%);
+            transition: all 300ms linear;
+        }
     }
 }
 

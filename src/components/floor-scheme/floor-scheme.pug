@@ -1,0 +1,49 @@
+include layout/utils
+
+-
+    var tenants = [
+        { name: "Ак барс", id: "A1" },
+        { name: "Тринити", id: "A2" },
+        { name: "Верный", id: "A3" },
+        { name: "The deep", id: "A4" },
+        { name: "Persoco", id: "A5" },
+        { name: "Pepsi", id: "A6" },
+        { name: "Floor", id: "A7" },
+        { name: "Лента", id: "A9" },
+        { name: "Аренда", id: "A11" },
+        { name: "Бизон", id: "A12" },
+        { name: "Чизерия", id: "A13" }
+    ]
+
++section.scheme
+    h2.scheme__title Схема этажей
+    .scheme__header
+        .scheme__controls
+            .scheme__navigation
+                .scheme__prev
+                .scheme__next
+            .scheme__pagination
+        .scheme__zoom
+            .scheme__zoom-out -
+            .scheme__zoom-in +
+    .scheme-slider.swiper
+        .swiper-wrapper
+            .swiper-slide.scheme-slide
+                .scheme-slide__floor 1
+                .scheme-slide__tenat-list
+                    each item in tenants
+                        .scheme-slide__tenat(data-room-id=item.id)
+                            .scheme-slide__room-id= item.id
+                            .scheme-slide__tenat-name= item.name
+                .scheme-slide__rooms
+                    include assets/1_floor.svg
+            .swiper-slide.scheme-slide
+                .scheme-slide__floor 2
+                .scheme-slide__tenat-list
+                    each item in tenants
+                        .scheme-slide__tenat(data-room-id=item.id)
+                            .scheme-slide__room-id= item.id
+                            .scheme-slide__tenat-name= item.name
+                .scheme-slide__rooms
+                    include assets/1_floor.svg
+    .scheme__decor._gray

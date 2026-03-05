@@ -1,0 +1,26 @@
+include layout/utils
+
++section({container:false}).rent-block
+    .decor__red
+    .decor__blue
+    h2.rent-block__title Аренда
+    .container
+        ul.rent-block__advantages
+            li.rent-block__advantages-item
+                .rent-block__advantages-item-title От 800Р
+                .rent-block__advantages-item-descr Рублей за квадратный метр
+            li.rent-block__advantages-item
+                .rent-block__advantages-item-title 10 минут
+                .rent-block__advantages-item-descr Пешком от метро
+            li.rent-block__advantages-item
+                .rent-block__advantages-item-title 40-1500м²
+                .rent-block__advantages-item-descr Площадь помещений
+            li.rent-block__advantages-item
+                .rent-block__advantages-item-title 100
+                .rent-block__advantages-item-descr Парковочных мест
+        include ui/form/rent/rent
+    .rent-block__contacts
+        +anchor("tel:+7 (843) 5 671 671") +7 (843) 5 671 671
+        +anchor("tel:+7 937 778 67 83") +7 937 778 67 83
+        +anchor("mailto:rodina-kzn@yandex.ru") E-mail: rodina-kzn@yandex.ru
+        +anchor.button.rent-block__contacts-button Подробнее об аренде

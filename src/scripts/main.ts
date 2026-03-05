@@ -12,6 +12,7 @@ import 'components/about/about.js'
 import 'components/shops-block/shops-block.js'
 import 'components/about-hero/about-hero.js'
 import 'components/room-section/room-section.js'
+import 'components/floor-scheme/floor-scheme.js'
 
 //Page
 import 'pages/index/index.js'

@@ -1,0 +1,123 @@
+@use 'styles/utils';
+.rent-block {
+    position: relative;
+
+    .decor__red {
+        position: absolute;
+        background-color: var(--red);
+        @include utils.circle(220px);
+        right: 262px;
+        bottom: 0;
+        transform: translateY(150px);
+    }
+
+    .decor__blue {
+        position: absolute;
+        background-color: #5480da;
+        @include utils.circle(51px);
+        bottom: 0;
+        left: 389px;
+        transform: translateY(-60px);
+    }
+
+    &__title {
+        margin-bottom: 50px;
+        font-size: 4.4rem;
+        font-weight: 800;
+        text-align: center;
+    }
+
+    .container {
+        position: relative;
+        left: -160px;
+        padding: 100px 0 255px;
+        width: 100svw;
+        max-width: 100svw;
+        display: flex;
+        justify-content: center;
+        background: linear-gradient(to bottom, #e8edfa, #d7e4ff);
+
+        .form {
+            position: absolute;
+            top: 192px;
+        }
+    }
+
+    &__advantages {
+        gap: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &-title {
+                font-size: 2.4rem;
+                font-weight: 800;
+            }
+
+            &-descr {
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+    &__contacts {
+        gap: 10px;
+        margin-top: 210px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.4rem;
+        font-weight: 800;
+        &-button {
+            margin-top: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .rent-block {
+        padding-bottom: 350px;
+        &__title {
+            margin-bottom: 35px;
+            font-size: 2.4rem;
+        }
+
+        .container {
+            left: -15px;
+            padding: 30px 0 137px;
+
+            .form {
+                top: 339px;
+            }
+        }
+
+        &__advantages {
+            gap: 20px;
+            flex-direction: column;
+            align-items: center;
+
+            &-item {
+                &-title {
+                    font-size: 1.8rem;
+                }
+
+                &-descr {
+                    max-width: 165px;
+                    font-size: 1.6rem;
+                    text-align: center;
+                }
+            }
+        }
+
+        &__contacts {
+            display: none;
+        }
+    }
+}

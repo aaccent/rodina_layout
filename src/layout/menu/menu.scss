@@ -16,11 +16,12 @@
 
 @media only screen and (max-width: 1000px) {
     .menu {
-        ul {
+        ul.menu__main {
             gap: 15px;
             flex-direction: column;
             align-items: start;
             font-size: 1.8rem;
+            font-weight: 400;
         }
     }
 }

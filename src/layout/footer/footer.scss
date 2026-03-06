@@ -24,6 +24,13 @@
         margin-left: 302px;
         display: flex;
         text-wrap: nowrap;
+
+        .menu ul {
+            gap: 15px;
+            flex-direction: column;
+            align-items: start;
+            font-size: 1.8rem;
+        }
     }
 
     .logo-wrapper {

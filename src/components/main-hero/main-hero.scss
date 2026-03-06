@@ -146,6 +146,12 @@
             padding: 0;
             flex-direction: column-reverse;
 
+            &-images {
+                &__inner {
+                    top: 0;
+                }
+            }
+
             &-text {
                 padding: 0 27px 74px;
                 width: 100%;

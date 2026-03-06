@@ -7,16 +7,20 @@
         align-items: center;
         font-size: 1.6rem;
 
-        &.menu__column {
+        &.menu__main {
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .menu {
+        ul {
             gap: 15px;
             flex-direction: column;
             align-items: start;
             font-size: 1.8rem;
-        }
-
-        &.menu__main {
-            font-size: 1.8rem;
-            font-weight: 800;
         }
     }
 }

@@ -81,6 +81,7 @@
             font-size: 3.5rem;
             font-weight: 800;
             line-height: 146%;
+            text-align: center;
         }
 
         &._active {
@@ -232,7 +233,7 @@
             bottom: 58px;
             left: 50%;
             transform: translate(-50%, 0);
-            flex-direction: row;
+            flex-direction: row-reverse;
 
             &-next,
             &-prev {

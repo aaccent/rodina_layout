@@ -132,6 +132,7 @@
             &-button-next,
             &-button-prev {
                 @include utils.circle(30px);
+                background-color: white;
             }
 
             &-button-prev {

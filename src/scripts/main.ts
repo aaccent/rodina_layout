@@ -13,6 +13,7 @@ import 'components/shops-block/shops-block.js'
 import 'components/about-hero/about-hero.js'
 import 'components/room-section/room-section.js'
 import 'components/floor-scheme/floor-scheme.js'
+import 'components/square-section/square-section.js'
 
 //Page
 import 'pages/index/index.js'

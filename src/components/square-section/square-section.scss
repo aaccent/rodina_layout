@@ -35,6 +35,27 @@
     &__list {
         gap: 35px;
         display: flex;
+
+        &-nav {
+            position: absolute;
+            top: 30%;
+            right: 100px;
+            left: 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-prev,
+        &-next {
+            @include utils.circle(50px);
+            @include utils.bg-defaults(auto);
+            background-image: url('assets/icons/arrow.svg');
+            border: 1px solid var(--red);
+        }
+
+        &-prev {
+            rotate: 180deg;
+        }
     }
 
     &__info-text {
@@ -60,6 +81,18 @@
         &__list {
             gap: 20px;
             flex-direction: column;
+
+            &-nav {
+                z-index: 1;
+                right: 5px;
+                left: 5px;
+            }
+
+            &-prev,
+            &-next {
+                @include utils.circle(30px);
+                background-color: white;
+            }
         }
 
         &__info-text {

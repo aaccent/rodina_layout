@@ -24,7 +24,7 @@ void (function () {
         zoom: options.zoom,
         placemarkOptions: {
             iconLayout: 'default#image',
-            iconImageHref: './assets/icons/mark.svg',
+            iconImageHref: '/bitrix/templates/rodina/media/icons/mark.webp',
             iconImageSize: options.iconImageSize,
             iconImageOffset: options.iconImageOffset,
         },

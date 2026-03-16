@@ -56,6 +56,10 @@
         &-prev {
             rotate: 180deg;
         }
+
+        .swiper-wrapper {
+            align-items: stretch;
+        }
     }
 
     &__info-text {
@@ -63,6 +67,14 @@
         max-width: 580px;
         color: #202020;
         text-align: center;
+    }
+
+    &__item {
+        height: auto;
+
+        .floor-card__body {
+            height: 100%;
+        }
     }
 }
 

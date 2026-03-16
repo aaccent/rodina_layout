@@ -39,7 +39,7 @@
 
         &._opened {
             .renter-list__item-descr {
-                z-index: 1;
+                z-index: 11;
                 transform: translateY(calc(100% + 10px));
                 opacity: 1;
                 transition:

@@ -10,5 +10,13 @@ document.querySelectorAll('.seo-section').forEach((section) => {
 
     section.classList.add('show-button')
 
-    button.addEventListener('click', () => section.classList.remove('show-button'))
+    button.addEventListener('click', () => {
+        if (section.classList.contains('open')) {
+            section.classList.remove('open')
+            button.textContent = 'Читать дальше'
+        } else {
+            section.classList.add('open')
+            button.textContent = 'Скрыть'
+        }
+    })
 })

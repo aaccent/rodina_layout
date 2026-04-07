@@ -1,14 +1,18 @@
 @use 'styles/utils';
 
 .card {
-    gap: 30px;
     position: relative;
     z-index: 2;
-    display: flex;
-    flex-direction: column;
+    height: 545px;
+
+    .button {
+        position: relative;
+        transition: all 300ms linear;
+    }
 
     &-container {
         gap: 57px;
+        margin-bottom: 30px;
         padding: 57px 30px 30px;
         display: flex;
         flex-direction: column;
@@ -37,11 +41,13 @@
 
     &-icon {
         @include utils.circle(113px);
-        inset: 50%;
         object-fit: cover;
         object-position: center;
         position: absolute;
+        top: 50%;
+        left: 50%;
         transform: translate(-50%, -50%);
+        transition: all 300ms linear;
     }
 
     &-content {
@@ -76,14 +82,14 @@
         .card-container {
             inset: 0;
             position: absolute;
+            margin-bottom: 0;
             transition: all 300ms linear;
         }
 
         .button {
-            position: absolute;
-            right: 30px;
-            bottom: 0;
-            transform: translateY(-26px);
+            right: -100%;
+            bottom: -100%;
+            transform: translate(calc(-100% - 30px), calc(-100% - 30px));
             color: white;
             background-color: var(--red);
             transition: all 300ms linear;
@@ -95,10 +101,8 @@
         }
 
         .card-icon {
-            inset: unset;
             top: 0;
-            right: 0;
-            transform: translate(0, -50%);
+            transform: translate(100%, -50%);
             transition: all 300ms linear;
         }
     }

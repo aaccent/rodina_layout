@@ -52,6 +52,10 @@
         a {
             margin-bottom: 20px;
             text-decoration: underline;
+
+            &:hover {
+                color: black;
+            }
         }
 
         &-aaccent {

@@ -16,6 +16,11 @@
         display: flex;
         align-items: center;
 
+        &.tel:hover,
+        &.mail:hover {
+            color: var(--red);
+        }
+
         &::before {
             @include utils.square(20px);
             @include utils.bg-defaults(cover);

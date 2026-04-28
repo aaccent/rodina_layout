@@ -53,6 +53,11 @@
         text-align: center;
         border-radius: 15px;
         border: 2px solid var(--red);
+
+        &:hover {
+            color: white;
+            background-color: var(--red);
+        }
     }
 }
 

@@ -53,6 +53,10 @@
             &.work-time::before {
                 background-image: url('assets/icons/clock.svg');
             }
+
+            &.navigation:hover {
+                color: var(--red);
+            }
         }
     }
 

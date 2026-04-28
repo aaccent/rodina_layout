@@ -27,14 +27,14 @@ void (function () {
     const scalePlus = document.querySelector('.scheme__zoom-in')
     const scaleMinus = document.querySelector('.scheme__zoom-out')
     scalePlus.addEventListener('click', () => {
-        const svgScheme = document.querySelector('.scheme-slide.swiper-slide-active .scheme-slide__rooms svg')
+        const svgScheme = document.querySelector('.swiper-slide-active .scheme-slide__rooms img')
         const scale = Number(svgScheme.style.scale) || 1
         const newScale = scale + 0.1
         svgScheme.setAttribute('style', `scale:${newScale}`)
     })
 
     scaleMinus.addEventListener('click', () => {
-        const svgScheme = document.querySelector('.scheme-slide.swiper-slide-active .scheme-slide__rooms svg')
+        const svgScheme = document.querySelector('.swiper-slide-active .scheme-slide__rooms img')
         const scale = Number(svgScheme.style.scale) || 1
         if (scale === 1) return
         const newScale = scale - 0.1
